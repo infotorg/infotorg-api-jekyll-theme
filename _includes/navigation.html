@@ -1,0 +1,9 @@
+{% assign items = site.data.navigation | where:'show', true %}
+
+<nav>
+    {% for item in items %}
+    <a href="{{ item.link }}" class="nav-link{% if page.url == item.link %} active{% endif %}">
+        {{ item.name }}
+    </a>
+    {% endfor %}
+</nav>
