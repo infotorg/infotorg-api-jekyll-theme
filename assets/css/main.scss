@@ -69,3 +69,20 @@
         }
     }
 }
+
+// Footer
+.footer {
+    font-size: 1rem;
+
+    .container {
+        border-top: 1px solid #c0c8cd;
+    }
+
+    .company {
+        font-size: 0.875rem;
+    }
+
+    .company .service-from-text {
+        padding-right: 10px;
+    }
+}
