@@ -1,12 +1,18 @@
 {% assign items = site.data.navigation | where:'show', true %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">infoTorg</a>
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container-lg">
+      <a class="navbar-brand" href="#">
+        <img src="assets/images/logo.svg" />
+        <span>developer</span>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="mcollapse navbar-collapse" id="navbarNav">
+      <div class="d-none d-lg-block py-4">
+        {% include title.html %}
+      </div>
+      <div class="mcollapse navbar-collapse collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
             {% for item in items %}
             <li class="nav-item">

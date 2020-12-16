@@ -9,18 +9,63 @@
 @import 'bootstrap';
 @import 'typography';
 
+.hero-section {
+    background-color: #dfe3e6;
+    background-image: url('/assets/images/it-gears.svg');
+    background-repeat: no-repeat;
+    padding: 20px 0;
+    background-position: right top;
+    background-size: 40%;
+}
+
+.header-info {
+    h1 {
+        color: #22272a;
+    }
+    p {
+        background-color: #e44634;
+        color: #FFF;
+        padding: 0 8px;
+    }
+
+    display: inline-block;
+}
+
+.navbar-brand {
+    span {
+        color: #a5130c;
+    }
+}
+
 @include media-breakpoint-up(lg) {
     .navbar {
-        height: 200px;
+        padding-bottom: 0;
+        background-color: #dfe3e6;
+        background-image: url('/assets/images/it-gears.svg');
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: 40%;
+
+        .nav-item {
+            & .active {
+                background: #FFF;
+            }
+
+            a {
+                color: #22272a;
+                font-weight: 500;
+            }
+        }
 
         .container-fluid {
             flex-direction: column;
-            justify-content: flex-end;
+            align-items: flex-start;
+            justify-content: space-between;
             height: 100%;
         }
 
-        .navbar-collapse {
-            justify-content: center;
+        .navbar-nav {
+            background-color: #b8c7b4;
         }
     }
 }
