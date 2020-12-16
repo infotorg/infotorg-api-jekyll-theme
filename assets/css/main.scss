@@ -3,8 +3,23 @@
 # only Main files contain this front matter, not partials.
 ---
 
-@import "typography";
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+//@import 'typography';
 
-.nav-link.active {
-  color: red;
+@import 'bootstrap';
+
+@include media-breakpoint-up(lg) {
+    .navbar {
+        height: 200px;
+
+        .container-fluid {
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 100%;
+        }
+
+        .navbar-collapse {
+            justify-content: center;
+        }
+    }
 }
