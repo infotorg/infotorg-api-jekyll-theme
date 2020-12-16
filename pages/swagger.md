@@ -1,5 +1,6 @@
 ---
 title: Swagger UI
+permalink: swagger
 ---
 # Swagger UI
 

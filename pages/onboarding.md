@@ -1,5 +1,6 @@
 ---
 title: Onboarding
+permalink: onboarding
 ---
 # Onboarding
 

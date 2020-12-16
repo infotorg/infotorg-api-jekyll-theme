@@ -1,18 +1,18 @@
 - name: Overview
-  link: index.html
+  link: /
   show: true
 - name: Domain
-  link: domain.html
+  link: /domain
   show: true
 - name: Security
-  link: security.html
+  link: /security
   show: true
 - name: SwaggerUI
-  link: swagger.html
+  link: /swagger
   show: true
 - name: Onboarding
-  link: onboarding.html
+  link: /onboarding
   show: true
 - name: FAQ
-  link: faq.html
+  link: /faq
   show: true

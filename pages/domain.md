@@ -1,5 +1,6 @@
 ---
 title: Domain
+permalink: domain
 ---
 # Domain
 
