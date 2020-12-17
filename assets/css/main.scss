@@ -21,8 +21,18 @@
 .header-info {
     h1 {
         color: #22272a;
+        font-size: 1.75rem;
     }
+
+    @include media-breakpoint-up(md) {
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+        }
+    }
+
     p {
+        font-size: 1rem;
         background-color: #e44634;
         color: #FFF;
         padding: 0 8px;
@@ -39,6 +49,7 @@
 
 @include media-breakpoint-up(lg) {
     .navbar {
+        padding-top: 38px;
         padding-bottom: 0;
         background-color: #dfe3e6;
         background-image: url('/assets/images/it-gears.svg');
@@ -70,8 +81,12 @@
     }
 }
 
-.infotorg-developer-logo {
-
+@include media-breakpoint-up(xl) {
+    .navbar {
+        .infotorg-developer-logo {
+            margin-left: -165px;
+        }
+    }
 }
 
 // Footer

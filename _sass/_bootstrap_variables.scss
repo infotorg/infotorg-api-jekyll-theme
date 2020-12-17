@@ -32,6 +32,16 @@ $link-hover-color: $color-clear-blue-dark;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 //$emphasized-link-hover-darken-percentage: 15% !default;
 
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+$container-max-widths: (
+    sm: 820px,
+    md: 820px,
+    lg: 820px,
+    xl: 820px,
+    xxl: 820px
+);
 
 // Typography
 //
