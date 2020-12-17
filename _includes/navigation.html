@@ -1,10 +1,16 @@
 {% assign items = site.data.navigation | where:'show', true %}
 
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar navbar-expand-lg navbar-light mb-3">
     <div class="container-lg">
-      <a class="navbar-brand" href="#">
-        <img src="assets/images/logo.svg" />
-        <span>developer</span>
+      <a class="navbar-brand" href="/">
+        <img
+            src="assets/images/infotorg-developer.png"
+            srcset="assets/images/infotorg-developer@2x.png 2x,
+                    assets/images/infotorg-developer@3x.png 3x"
+            width="232"
+            height="40"
+            alt="infotorg developer"
+        />
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
