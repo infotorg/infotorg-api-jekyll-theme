@@ -81,11 +81,21 @@
     }
 }
 
-.cube-bg {
-    background: left center no-repeat url("../images/cube.svg");
-    height: 100px;
-    margin-top: 40px;
-    margin-bottom: 40px;
+// Main content
+.bg-cube {
+    position: relative;
+    padding-bottom: 260px;
+
+    &:before {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        background: no-repeat url("../images/cube.svg") 0 83%;
+        margin-left: var(--bs-gutter-x, .75rem);
+    }
 }
 
 @include media-breakpoint-up(xl) {
@@ -95,8 +105,8 @@
         }
     }
 
-    .cube-bg {
-        margin-left: -33px;
+    .bg-cube:before {
+        margin-left: -22px;
     }
 }
 
