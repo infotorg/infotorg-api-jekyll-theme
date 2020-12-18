@@ -14,5 +14,6 @@
   link: /onboarding
   show: true
 - name: FAQ
-  link: /faq
+  link: https://faq.socialboards.com/infotorg/
+  target: _blank
   show: true
