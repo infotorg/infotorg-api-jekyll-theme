@@ -35,7 +35,7 @@
         font-size: 1rem;
         background-color: #e44634;
         color: #FFF;
-        padding: 0 8px;
+        padding: 0 4px;
     }
 
     display: inline-block;
@@ -47,7 +47,15 @@
     }
 }
 
+.navbar-nav .nav-link {
+    font-family: $font-heading;
+}
+
 @include media-breakpoint-up(lg) {
+    #navbarNav {
+        margin-left: -12px;
+    }
+
     .navbar {
         padding-top: 38px;
         padding-bottom: 0;
@@ -77,6 +85,12 @@
 
         .navbar-nav {
             background-color: #b8c7b4;
+
+            .nav-link {
+                font-size: 1rem;
+                padding-right: 1.5rem;
+                padding-left: 1.5rem;
+            }
         }
     }
 }
@@ -131,6 +145,6 @@
     }
 
     .company .service-from-text {
-        padding-right: 10px;
+        padding-right: 9px;
     }
 }
