@@ -2,6 +2,10 @@
 title: Domain
 permalink: domain
 ---
-# Domain
+# {{ page.title }}
 
-Domain page is under construction.
+## The page is under construction. 
+To change or remove this content, see `/{{ page.path }}`.
+
+To change the `{{ page.title }}` name in a navigation, see `/_data/navigation.yml`.
+

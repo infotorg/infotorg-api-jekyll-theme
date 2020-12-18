@@ -2,6 +2,9 @@
 title: Security
 permalink: security
 ---
-# Security
+# {{ page.title }}
 
-Security page is under construction.
+## The page is under construction.
+To change or remove this content, see `/{{ page.path }}`.
+
+To change the `{{ page.title }}` name in a navigation, see `/_data/navigation.yml`.

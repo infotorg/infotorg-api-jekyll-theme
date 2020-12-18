@@ -1,3 +1,4 @@
+# --- Jekyll configuration ---
 defaults:
   - scope:
       path: ""
@@ -5,3 +6,9 @@ defaults:
       layout: "default"
 sass:
     style: compressed # possible values: nested expanded compact compressed
+
+# --- Site data configuration ---
+lang: en-US
+title: infotorg API
+subtitle: Onboarding guidelines and documentation
+openapi: '' # Used for Swagger UI
