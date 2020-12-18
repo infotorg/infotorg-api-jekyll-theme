@@ -36,8 +36,15 @@
         <ul class="navbar-nav ml-auto">
             {% for item in items %}
             <li class="nav-item">
+                {% if item.link contains '://' %}
+                    {{ # External link }}
+                    {% assign item_url = item.link %}
+                {% else %}
+                    {{ # Internal link }}
+                    {% assign item_url = item.link | prepend: site.baseurl %}
+                {% endif %}
                 <a
-                    href="{{site.baseurl}}{{ item.link }}"
+                    href="{{ item_url }}"
                     class="nav-link{% if page.url == item.link %} active{% endif %}"
                     {% if item.target %}target="{{item.target}}"{% endif %}
                 >
