@@ -6,6 +6,9 @@ defaults:
       layout: "default"
 sass:
     style: compressed # possible values: nested expanded compact compressed
+plugins:
+  # See the documentation for Jekyll SEO Tag: https://github.com/jekyll/jekyll-seo-tag
+  - jekyll-seo-tag
 
 # --- Site data configuration ---
 lang: en-US
