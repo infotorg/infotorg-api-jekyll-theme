@@ -1,3 +1,6 @@
+- name: Services
+  link: /services
+  show: true
 - name: Overview
   link: /
   show: true

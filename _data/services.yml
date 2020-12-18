@@ -1,0 +1,19 @@
+- name: Foretak
+  url: /
+  info: >-
+    <h3>Property information</h3>
+    <p>In this API, you will find all the information you need to make correct decisions when buying, selling, developing, and managing properties.
+       It contains all judicial, technical, and economic information for all properties in Norway.</p>
+  show: true
+
+- name: Eiendom
+  url: https://infotorg.github.io/eiendom/
+  info: >-
+    <h3>Property information</h3>
+    <p>In this API, you will find all the information you need to make correct decisions when buying, selling, developing, and managing properties.
+       It contains all judicial, technical, and economic information for all properties in Norway.</p>
+    <h3>Property Registry</h3>
+    <p>The Property Registry contains information from both the Land Registry (grunnbok) and cadastre (matrikkel). The land registration is a public register which contains officially registered liens (tinglyste rettigheter) and encumbrance on real estate and condominium units (borettslagsandeler). The cadastre is Norway’s official registry for properties.</p>
+    <p>Among other things, you will get up-to-date information about:</p>
+  show: true
+
