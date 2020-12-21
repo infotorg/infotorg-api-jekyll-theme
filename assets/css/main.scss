@@ -161,14 +161,15 @@
     }
 
     .accordion-button:focus {
-        border-top: 1px solid rgba(0,0,0,0.125);
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
         box-shadow: none;
     }
 
     .accordion-button::after {
         background-image: url("../images/icons/info.svg");
-        width: 1.5rem;
-        height: 1.5rem;
+        background-size: auto;
+        width: 24px;
+        height: 25px;
     }
 
     .accordion-button:not(.collapsed)::after {
@@ -185,5 +186,20 @@
 
     .accordion-body {
         padding-top: 1.875rem;
+    }
+
+    .btn-hide-details {
+        color: $color-nice-blue;
+        text-decoration: none;
+        margin-right: -0.8rem;
+    }
+
+    .btn-hide-details:after {
+        content: "";
+        width: 24px;
+        height: 25px;
+        background-image: url(../images/icons/collapse.svg);
+        background-repeat: no-repeat;
+        margin-left: 4px;
     }
 }
