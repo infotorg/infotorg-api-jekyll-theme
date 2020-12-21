@@ -10,11 +10,14 @@
             id="heading-{{ forloop.index }}"
             class="accordion-header"
         >
-            {% assign icon_path = "assets/images/icons/services/" | append: item.icon | relative_url %}
+            {% assign icons_dir = "assets/images/icons/services/" %}
+            {% assign icon_path = icons_dir | prepend: '/' | append: item.icon %}
 
             {% for static_file in site.static_files %}
                 {% if static_file.path == icon_path %}
                     {% assign icon_exists = true %}
+
+                    {% break %}
                 {% endif %}
             {% endfor %}
 
@@ -28,7 +31,7 @@
             >
                 <span class="service-icon">
                     {% if icon_exists == true %}
-                    <img src="{{ icon_path }}">
+                    <img src="{{ icons_dir }}{{ item.icon }}">
                     {% endif %}
                 </span>
 
