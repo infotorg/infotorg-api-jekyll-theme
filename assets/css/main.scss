@@ -157,7 +157,42 @@
     margin-bottom: 2rem;
 }
 
-.service-icon {
-    width: 32px;
-    margin-right: 16px;
+.services-list {
+    .service-icon {
+        width: 32px;
+        margin-right: 16px;
+    }
+
+    .accordion-button {
+        font-family: $font-text;
+        font-size: 1.125rem;
+        font-weight: bold;
+    }
+
+    .accordion-button:focus {
+        border-top: 1px solid rgba(0,0,0,0.125);
+        box-shadow: none;
+    }
+
+    .accordion-button::after {
+        background-image: url("../images/icons/info.svg");
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: none;
+        transform: none;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: inherit;
+        border-bottom: none;
+        text-decoration: underline;
+        color: $color-clear-blue;
+    }
+
+    .accordion-body {
+        padding-top: 1.875rem;
+    }
 }
