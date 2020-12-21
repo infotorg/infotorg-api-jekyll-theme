@@ -1,5 +1,7 @@
 - name: Foretak
   url: /
+  # icon file name that located in the /assets/images/icons/services directory
+  icon: foretak.svg
   info: >-
     <h3>Property information</h3>
     <p>In this API, you will find all the information you need to make correct decisions when buying, selling, developing, and managing properties.
@@ -8,6 +10,8 @@
 
 - name: Eiendom
   url: https://infotorg.github.io/eiendom/
+  # icon file name that located in the /assets/images/icons/services directory
+  icon: eiendom.svg
   info: >-
     <h3>Property information</h3>
     <p>In this API, you will find all the information you need to make correct decisions when buying, selling, developing, and managing properties.

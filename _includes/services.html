@@ -10,6 +10,12 @@
             id="heading-{{ forloop.index }}"
             class="accordion-header"
         >
+            {% comment %}
+                Important: The path needs to start at the root level of your Jekyll project and without a leading slash /
+            {% endcomment %}
+            {% assign icon_path = "assets/images/icons/services/" | append: item.icon %}
+            {% capture icon_exists %}{% file_exists {{ icon_path }} %}{% endcapture %}
+
             <button
                 class="accordion-button collapsed"
                 type="button"
@@ -18,14 +24,19 @@
                 aria-expanded="false"
                 aria-controls="collapse-{{ forloop.index }}"
             >
+                <span class="service-icon">
+                {% if icon_exists == "true" %}
+                    <img src="{{ icon_path }}">
+                {% endif %}
+                </span>
+
                 {{ item.name }}
             </button>
         </h2>
         <div
             id="collapse-{{ forloop.index }}"
-            class="accordion-collapse collapse"
+            class="collapse"
             aria-labelledby="heading-{{ forloop.index }}"
-            data-bs-parent="#services-list"
         >
             <div class="accordion-body">
                 {{ item.info }}
