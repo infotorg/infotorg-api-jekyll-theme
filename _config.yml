@@ -14,8 +14,23 @@ plugins:
 lang: en-US
 title: infotorg API
 subtitle: Onboarding guidelines and documentation
+# Your Google Analytics GTM-XXXX code
+google_analytics_tag_manager: ''
+
 # Path to Open API file name, used for Swagger UI.
 # As a convention, all Open API files should be stored in the /assets/openapi folder.
 openapi: 'assets/openapi/eiendom.json'
-# Your Google Analytics GTM-XXXX code
-google_analytics_tag_manager: ''
+
+# Swagger UI Theme
+# If not set will fetch the latest default theme css from an official CDN.
+# Other available themes:
+# - feeling-blue
+# - flattop
+# - material
+# - monokai
+# - muted
+# - newspaper
+# - outline
+# Theme files are located in the /assets/css/swagger-ui/3.x folder.
+# Screenshots are available on the https://github.com/ostranme/swagger-ui-themes page.
+swaggerui_theme: ''

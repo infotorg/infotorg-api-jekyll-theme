@@ -1,6 +1,6 @@
 {% assign items = site.data.navigation | where:'show', true %}
 
-<nav class="navbar navbar-expand-lg navbar-light mb-3">
+<nav class="navbar navbar-expand-lg navbar-light {{ include.class | default: 'mb-3' }}">
     <div class="container-lg">
       <a
           href="/"

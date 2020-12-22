@@ -97,14 +97,13 @@
 
 // Main content
 .bg-cube {
-    height: 75px;
+    height: 55px;
     margin-top: 36px;
     margin-bottom: 32px;
 
     background-image: url("../images/cube.svg");
     background-size: 48px;
     background-repeat: no-repeat;
-    margin-left: var(--bs-gutter-x, .75rem);
 }
 
 @include media-breakpoint-up(xl) {
@@ -115,10 +114,14 @@
     }
 
     .bg-cube {
+        height: 75px;
         margin-top: 94px;
         margin-bottom: 72px;
         background-size: 65px;
-        margin-left: -22px;
+        margin-left: -32px;
+    }
+    .container-fluid .bg-cube {
+        //margin-left: auto;
     }
 }
 
