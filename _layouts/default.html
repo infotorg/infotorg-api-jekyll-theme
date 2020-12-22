@@ -8,13 +8,9 @@
 
     {% seo %}
 
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/print.css">
-
-    {% include google-analytics.html %}
+    {% include head-fonts.html %}
+    {% include head-app-css.html %}
+    {% include head-google-analytics.html %}
 </head>
 <body class="d-flex flex-column h-100">
 <!-- Navigation -->
@@ -32,10 +28,9 @@
         {{ content }}
 
         <div class="bg-cube"></div>
-
     </div>
-
 </main>
+
 <!-- Footer -->
 {% include footer.html %}
 <script src="assets/bootstrap.min.js"></script>
