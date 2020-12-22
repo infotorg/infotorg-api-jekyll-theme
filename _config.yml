@@ -14,4 +14,8 @@ plugins:
 lang: en-US
 title: infotorg API
 subtitle: Onboarding guidelines and documentation
-openapi: '' # Used for Swagger UI
+# Path to Open API file name, used for Swagger UI.
+# As a convention, all Open API files should be stored in the /assets/openapi folder.
+openapi: 'assets/openapi/eiendom.json'
+# Your Google Analytics GTM-XXXX code
+google_analytics_tag_manager: ''

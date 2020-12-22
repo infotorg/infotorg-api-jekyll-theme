@@ -1,0 +1,13 @@
+{% comment %}
+ * Google Analytics Tag Manager
+ * The content will be included only if the 'google_analytics_tag_manager' option is setup in the '/_config.yml' file.
+{% endcomment %}
+{% if site.google_analytics_tag_manager and site.google_analytics_tag_manager != "" %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_tag_manager }}"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.google_analytics }}');
+</script>
+{% endif %}
