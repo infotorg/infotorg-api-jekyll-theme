@@ -68,6 +68,7 @@
         .nav-item {
             & .active {
                 background: #FFF;
+                box-shadow: 0 0 20px 0 rgba(144, 163, 173, 0.3);
             }
 
             a {
