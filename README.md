@@ -1,3 +1,2 @@
-# infotorg-api-jekyll-theme
-Jekyll theme for Infotorg API
-test commit
+# Jekyll theme for Infotorg APIs
+![Theme screenshot](screenshot.png)
