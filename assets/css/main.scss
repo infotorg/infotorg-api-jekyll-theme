@@ -111,13 +111,7 @@
     background-repeat: no-repeat;
 }
 
-@include media-breakpoint-up(xl) {
-    .navbar {
-        .infotorg-developer-logo {
-            margin-left: -165px;
-        }
-    }
-
+@include media-breakpoint-up(lg) {
     .bg-cube {
         height: 75px;
         margin-top: 94px;
@@ -125,8 +119,13 @@
         background-size: 65px;
         margin-left: -32px;
     }
-    .container-fluid .bg-cube {
-        //margin-left: auto;
+}
+
+@include media-breakpoint-up(xl) {
+    .navbar {
+        .infotorg-developer-logo {
+            margin-left: -165px;
+        }
     }
 }
 
