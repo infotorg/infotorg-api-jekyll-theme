@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light {{ include.class | default: 'mb-3' }}">
     <div class="container-lg">
-        {% if page.show_navigation %}
         <a
             href="/"
             class="navbar-brand infotorg-developer-logo"
@@ -14,6 +13,7 @@
                 alt="infotorg developer"
             />
         </a>
+        {% if page.show_navigation %}
         <button
             class="navbar-toggler"
             type="button"
