@@ -21,7 +21,7 @@ google_analytics_tag_manager: ''
 # --- Swagger UI configuration ---
 # Path to Open API file name, used for Swagger UI.
 # As a convention, all Open API files should be stored in the /assets/openapi folder.
-openapi: '/assets/openapi/eiendom.json'
+openapi: ''
 
 # Swagger UI Theme
 # If not set will fetch the latest default theme css from an official CDN.
