@@ -1,58 +1,67 @@
-{% assign items = site.data.navigation | where:'show', true %}
-
 <nav class="navbar navbar-expand-lg navbar-light {{ include.class | default: 'mb-3' }}">
     <div class="container-lg">
-      <a
-          href="/"
-          class="navbar-brand infotorg-developer-logo"
-      >
-        <img
-            src="assets/images/infotorg-developer.png"
-            srcset="assets/images/infotorg-developer@2x.png 2x,
-                    assets/images/infotorg-developer@3x.png 3x"
-            width="232"
-            height="40"
-            alt="infotorg developer"
-        />
-      </a>
-      <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="d-none d-lg-block py-4">
-        {% include title.html %}
-      </div>
-      <div
-          id="navbarNav"
-          class="mcollapse navbar-collapse collapse"
-      >
-        <ul class="navbar-nav ml-auto">
-            {% for item in items %}
-            <li class="nav-item">
-                {% if item.link contains '://' %}
-                    {{ # External link }}
-                    {% assign item_url = item.link %}
-                {% else %}
-                    {{ # Internal link }}
-                    {% assign item_url = item.link | prepend: site.baseurl %}
-                {% endif %}
-                <a
-                    href="{{ item_url }}"
-                    class="nav-link{% if page.url == item.link %} active{% endif %}"
-                    {% if item.target %}target="{{item.target}}"{% endif %}
-                >
-                    {{ item.name }}
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
-      </div>
+        {% if page.show_navigation == true %}
+        <a
+            href="/"
+            class="navbar-brand infotorg-developer-logo"
+        >
+            <img
+                src="assets/images/infotorg-developer.png"
+                srcset="assets/images/infotorg-developer@2x.png 2x,
+                assets/images/infotorg-developer@3x.png 3x"
+                width="232"
+                height="40"
+                alt="infotorg developer"
+            />
+        </a>
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+        >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        {% endif %}
+
+        <div class="header-info-wrapper d-none d-lg-block pt-4">
+            {% include title.html %}
+        </div>
+
+        {% if page.show_navigation == true %}
+        <div
+            id="navbarNav"
+            class="mcollapse navbar-collapse collapse"
+        >
+            {% comment %}
+              *  Items will contain only visible elements
+            {% endcomment %}
+            {% assign items = site.data.navigation | where:'show', true %}
+
+            <ul class="navbar-nav ml-auto">
+                {% for item in items %}
+                    <li class="nav-item">
+                        {% if item.link contains '://' %}
+                            {{ # External link }}
+                            {% assign item_url = item.link %}
+                        {% else %}
+                            {{ # Internal link }}
+                            {% assign item_url = item.link | prepend: site.baseurl %}
+                        {% endif %}
+                        <a
+                            href="{{ item_url }}"
+                            class="nav-link{% if page.url == item.link %} active{% endif %}"
+                            {% if item.target %}target="{{ item.target }}"{% endif %}
+                        >
+                            {{ item.name }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
     </div>
-  </nav>
+</nav>
