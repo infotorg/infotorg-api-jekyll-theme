@@ -191,6 +191,10 @@
         color: $color-clear-blue;
     }
 
+    .accordion-button:hover {
+        background-color: $color-nice-grey;
+    }
+
     .service-item:last-child .accordion-button.collapsed {
         border-bottom: 1px solid rgba(0, 0, 0, 0.125);
     }
@@ -204,6 +208,10 @@
         text-decoration: none;
         margin-right: -0.8rem;
         font-size: 0.875rem;
+    }
+
+    .btn-hide-details:hover {
+        background-color: $color-nice-grey;
     }
 
     .btn-hide-details:after {
