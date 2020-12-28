@@ -18,6 +18,22 @@ $danger: $color-error-red;
 //$light: #f8f9fa;
 //$dark: #343a40;
 
+// Spacing
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
+$spacer: 1rem;
+$spacers: (
+    0: 0,
+    1: $spacer / 4,
+    2: $spacer / 2,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+    6: $spacer * 4
+);
+
 // Body
 //
 // Settings for the `<body>` element.

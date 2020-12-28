@@ -13,3 +13,25 @@ body {
 h1, .h1 {
   font-weight: normal;
 }
+
+main .layout-default {
+  & h1:first-child {
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    @extend .mt-6;
+  }
+
+  h3 {
+    color: $color-calm-grey-darkest;
+    @extend .mt-5;
+  }
+
+  @include media-breakpoint-up(lg) {
+    & h1:first-child  {
+      font-size: $font-size-h1;
+    }
+  }
+}
