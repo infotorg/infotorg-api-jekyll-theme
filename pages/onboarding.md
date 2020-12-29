@@ -2,10 +2,32 @@
 title: Onboarding
 permalink: onboarding
 ---
-# {{ page.title }}
+# Introduction
+Look no further, this is the easiest way to get started using the gjeldsregister. 
 
-## The page is under construction.
-To change or remove this content, see `/{{ page.path }}`.
+A printed version of the onboarding doc can be found here: <a href="{{site.links.onboarding_doc}}">Onboarding document</a>. 
+Standards are found here: <a href="{{site.links.standard_doc}}">Standards Specification v1.2.0</a> and <a href="{{site.links.security_doc}}">Security Document v1.3.0</a>.
+<img 
+    src="{{ 'assets/images/onboarding-process.svg' | relative_url }}"
+    alt="Onboarding steps"
+    class="w-100 mt-5"
+/>
 
-To change the `{{ page.title }}` name in a navigation, see `/_data/navigation.yml`.
+## Process
+The process from project initialization to production ready consists of several phases as shown in the above diagram. 
 
+1. [Startup](startup)
+2. [Development & test](development-and-test)
+3. [Verification](verification)
+4. [Production](production)
+
+<div class="mt-5">
+    {% assign faq = site.data.navigation | where: "name", "FAQ" | first %}
+    Also, you can visit our FAQ page:<br />
+    <a href="{{ faq.link }}">{{ faq.link }}</a>
+</div>
+
+<div class="mt-5">
+Yours,<br />
+Infotorg team.
+</div>
