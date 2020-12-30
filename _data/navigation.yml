@@ -20,7 +20,7 @@
 
 - name: Field description
   link: /field-descriptions
-  show: false
+  show: true
 
 - name: Onboarding
   link: /onboarding

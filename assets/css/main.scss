@@ -59,6 +59,7 @@
 @include media-breakpoint-up(lg) {
     #navbarNav {
         margin-left: -12px;
+        white-space: nowrap;
     }
 
     .navbar {
