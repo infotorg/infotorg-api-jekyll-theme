@@ -1,3 +1,8 @@
+# If you use the them as a remote one, uncomment `remote_theme` configuration.
+# Set a branch name or version at the `remote_theme` value e.g. `@main` or `@v1.0.0`.
+# Be careful if you omit the branch then automatically will be used `master`.
+#remote_theme: "infotorg/infotorg-api-jekyll-theme@main"
+
 # --- Site default configuration ---
 defaults:
   - scope:
@@ -12,13 +17,24 @@ plugins:
   - jekyll-seo-tag
 
 # --- Site data configuration ---
+
+# Sets a page language in the `<html lang="YOUR-LOCALE">` tag
 lang: en-US
+
+# Sets a visible site title in a page header.
+# As well used as a part of title in a <title> tag.
+# For a "Security" page will looks: <title>Security | infotorg API</title>
 title: infotorg API
+
+# Sets a visible subtitle under the title on the page
 subtitle: Onboarding guidelines and documentation
+
 # Your Google Analytics GTM-XXXX code
 google_analytics_tag_manager: ''
 
+
 # --- Swagger UI configuration ---
+
 # Path to Open API file name, used for Swagger UI.
 # As a convention, all Open API files should be stored in the /assets/openapi folder.
 openapi: '/assets/openapi/eiendom.json'
