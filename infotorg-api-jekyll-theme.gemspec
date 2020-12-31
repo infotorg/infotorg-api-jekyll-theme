@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "infotorg-api-jekyll-theme"
-  spec.version       = "0.1.3"
+  spec.version       = "0.1.4
   spec.authors       = ["Volodymyr Chumak"]
   spec.email         = ["coder.ua@gmail.com"]
 
