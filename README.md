@@ -39,3 +39,27 @@ A good example of a theme is Minima, which is the default theme used when runnin
 
 [![jekyll - minima](https://img.shields.io/static/v1?label=jekyll&message=minima&color=blue&logo=github)](https://github.com/jekyll/minima)
 
+## About
+
+### Where this project comes from
+
+The theme scaffold was generated with this command and Jekyll 4:
+
+```sh
+$ jekyll new NAME
+```
+
+### Package a theme
+
+The part that allows this project gem to be packaged as an installable gem-based theme is this file:
+
+- [infotorg-api-jekyll-theme.gemspec](/infotorg-api-jekyll-theme.gemspec)
+
+The other parts like the config and Gemfile or the layout and includes directories are standard for a Jekyll project.
+
+Resources:
+
+- [Creating a gem-based theme](https://jekyllrb.com/docs/themes/#creating-a-gem-based-theme) in Jekyll docs.
+- [Publishing your theme](https://jekyllrb.com/docs/themes/#publishing-your-theme) in Jekyll docs.
+- [Adding a theme to your GitHub Pages site using Jekyll](https://help.github.com/en/github/working-with-github-pages/adding-a-theme-to-your-github-pages-site-using-jekyll) guide on Github's help.
+

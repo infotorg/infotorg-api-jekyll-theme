@@ -1,4 +1,4 @@
-# --- Jekyll configuration ---
+# --- Site default configuration ---
 defaults:
   - scope:
       path: ""
