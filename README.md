@@ -215,8 +215,6 @@ swaggerui_theme: ''
 
 #### 2. Add to Gemfile
 
-_TODO Update your version of this file on your new repo, using just **one** of the two approaches. Note the RubyGems approach needs signup and publishing on RubyGems site while the GitHub approach only needs a public repo to exist._
-
 To install from **RubyGems**:
 
 - `Gemfile`
