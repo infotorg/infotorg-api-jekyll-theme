@@ -72,8 +72,6 @@ Two approaches are covered for installing the theme. The Remote Theme approach i
 
 Only a few standard themes are available on the locked GH Pages environment. So you must use this Remote Theme plugin to fetch your custom theme.
 
-#### 1. Add to the config
-
 Use the [remote theme](https://github.com/benbalter/jekyll-remote-theme) approach to load a theme using GitHub details.
 
 `_config.yml`
@@ -105,7 +103,9 @@ Use the [remote theme](https://github.com/benbalter/jekyll-remote-theme) approac
   sass:
     style: compressed # possible values: nested expanded compact compressed
   
+  
   # --- Site data configuration ---
+  
   # Sets a page language in the `<html lang="YOUR-LOCALE">` tag
   lang: en-US
 
@@ -144,3 +144,139 @@ Use the [remote theme](https://github.com/benbalter/jekyll-remote-theme) approac
 
 Continue to [Install project gems](#install-project-gems)
 
+### Custom CI/local flow
+
+While gems are locked on GH Pages, you can install custom gems like a theme if you use a CI flow. Such as with GH Actions or Netlifym.
+
+#### 1. Add to your config
+
+Update your project's `_config.yaml`:
+
+```yaml
+####
+# --- Required configuration ---
+####
+theme: infotorg-api-jekyll-theme
+
+####
+# --- Optional configuration ---
+####
+
+# --- Site defaults configuration ---
+defaults:
+- scope:
+    path: ""
+  values:
+    # Default layout for any page that doesn't contain 'layout' option in the Front Matter.
+    # (https://jekyllrb.com/docs/step-by-step/03-front-matter/) 
+    layout: "default"
+    show_navigation: true
+sass:
+style: compressed # possible values: nested expanded compact compressed
+
+
+# --- Site data configuration ---
+
+# Sets a page language in the `<html lang="YOUR-LOCALE">` tag
+lang: en-US
+
+# Sets a visible site title in a page header.
+# As well used as a part of title in a <title> tag.
+# For a "Security" page will looks: <title>Security | infotorg API</title>
+title: infotorg API
+
+# Sets a visible subtitle under the title on the page
+subtitle: Onboarding guidelines and documentation
+
+# Your Google Analytics GTM-XXXX code
+google_analytics_tag_manager: ''
+
+
+# --- Swagger UI configuration ---
+
+# Path to Open API file name, used for Swagger UI.
+# As a convention, all Open API files should be stored in the /assets/openapi folder.
+openapi: '/assets/openapi/eiendom.json'
+
+# Swagger UI Theme
+# If not set will fetch the latest default theme css from an official CDN.
+# Other available themes:
+#  - feeling-blue
+#  - flattop
+#  - material
+#  - monokai
+#  - muted
+#  - newspaper
+#  - outline
+# Theme files are located in the /assets/css/swagger-ui/3.x folder.
+# Screenshots are available on the https://github.com/ostranme/swagger-ui-themes page.
+swaggerui_theme: ''
+```
+
+#### 2. Add to Gemfile
+
+_TODO Update your version of this file on your new repo, using just **one** of the two approaches. Note the RubyGems approach needs signup and publishing on RubyGems site while the GitHub approach only needs a public repo to exist._
+
+To install from **RubyGems**:
+
+- `Gemfile`
+    ```ruby
+    source "https://rubygems.org"
+    
+    gem "github-pages"
+    gem "infotorg-api-jekyll-theme"
+    ```
+
+To install from **GitHub**:
+
+- `Gemfile`
+    ```ruby
+    source "https://rubygems.org"
+    
+    gem "github-pages"
+    gem "infotorg-api-jekyll-theme", git: "https://github.com/coderua/infotorg-api-jekyll-theme"
+    ```
+
+### Install project gems
+
+Now install your gems locally. This is also needed on GH Actions. Netlify takes care of gems for you though.
+
+Configure Bundler locally - only needed once.
+
+```sh
+$ bundle config set --local path vendor/bundle
+```
+
+Install project gems.
+
+```sh
+$ bundle install
+```
+
+### Installed path
+
+Useful info for understanding where your theme gets installed based on the approach.
+
+#### GH Pages supported theme
+
+Themes downloaded from RubyGems usually install here:
+
+- `vendor/bundle/ruby/RUBY_VERSION/gems/THEME_NAME-THEME_VERSION`
+
+#### GH Pages Remote Theme flow
+
+The Remote Theme plugin stores the theme in memory and not on disk with gems.
+
+#### Custom CI/local flow
+
+If you added your theme to your Gemfile directly and installed from GitHub URL, it will get installed here:
+
+```
+vendor/bundle/ruby/RUBY_VERSION/bundler/gems/THEME_NAME-THEME_VERSION
+```
+
+Where the version at the end is a hash (`123456789abc`) or a tag number (`1.0.0`).
+
+### Installed dependencies
+
+See the [gemspec](/infotorg-api-jekyll-theme.gemspec) file to see what dependencies get installed. This came with the scaffold. Update minimum Jekyll version.

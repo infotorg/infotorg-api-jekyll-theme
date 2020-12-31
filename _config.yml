@@ -16,6 +16,7 @@ plugins:
   # See the documentation for Jekyll SEO Tag: https://github.com/jekyll/jekyll-seo-tag
   - jekyll-seo-tag
 
+
 # --- Site data configuration ---
 
 # Sets a page language in the `<html lang="YOUR-LOCALE">` tag
