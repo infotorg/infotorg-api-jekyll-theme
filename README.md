@@ -28,3 +28,14 @@ View a live demo on GH Pages:
 [![GH Pages - View demo](https://img.shields.io/badge/GH_Pages-View_demo-green?style=for-the-badge)](https://coderua.github.io/infotorg-api-jekyll-theme/)
 
 </div>
+
+## What is a Jekyll theme?
+
+If you build a Jekyll site, you'll typically use a theme to style your site or at least give a base which you and customize on top of.
+
+A theme is a way of packaging layout files, CSS styling and includes files to be installed in another Jekyll project. A theme might be made from scratch or based on a static HTML. A theme is a great way of making styling reusable across projects by you and other people.
+
+A good example of a theme is Minima, which is the default theme used when running `jekyll new PATH`.
+
+[![jekyll - minima](https://img.shields.io/static/v1?label=jekyll&message=minima&color=blue&logo=github)](https://github.com/jekyll/minima)
+
