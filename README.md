@@ -9,7 +9,7 @@ Create a new project from this template. Or just use the code or docs here as a 
 
 <div align="center">
 
-[![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?style=for-the-badge&logo=github)]({{ site.github.repository_url }}/generate)
+[![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?style=for-the-badge&logo=github)](./generate)
 
 </div>
 
