@@ -3,6 +3,7 @@
 
 [![Ruby - >=2.3](https://img.shields.io/badge/Ruby->=2.3-green?logo=ruby&logoColor=white)](https://ruby-lang.org)
 [![Jekyll - 3.9](https://img.shields.io/badge/Jekyll-3.9-green?logo=jekyll&logoColor=white)](https://jekyllrb.com)
+[![Bootstrap - 5](https://img.shields.io/badge/Bootstrap-5-green?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](#license)
 
 ![Theme screenshot](screenshot.png)
@@ -66,81 +67,83 @@ Resources:
 ## Installation
 >  Install this theme in your project
 
-Two approaches are covered for installing the theme. The Remote Theme approach is necessary for plain GH Pages setup, while the second approach needs some kind of CI like GitHub Actions or Netlify. Both require only a few lines of code.
+Two approaches are covered for installing the theme. The Remote Theme approach is necessary for plain [GH Pages](https://pages.github.com/) setup, 
+while the second approach needs some kind of CI like GitHub Actions, Netlify or local development/build. Both require only a few lines of code.
 
-### GH Pages Remote Theme flow
+### GitHub Pages Remote Theme flow
 
-Only a few standard themes are available on the locked GH Pages environment. So you must use this Remote Theme plugin to fetch your custom theme.
+Only a few [standard themes](https://pages.github.com/themes/) are available on the locked GH Pages environment. 
+So you must use this Remote Theme plugin to fetch your custom theme.
 
 Use the [remote theme](https://github.com/benbalter/jekyll-remote-theme) approach to load a theme using GitHub details.
 
 `_config.yml`
 ```yaml
-  ####
-  # --- Required configuration ---
-  ####
+####
+# --- Required configuration ---
+####
 
-  # Set a branch name or version at the `remote_theme` value e.g. `@main` or `@v1.0.0`.
-  # Be careful if you omit the branch then automatically will be used `master`. 
-  remote_theme: "infotorg/infotorg-api-jekyll-theme@main"
-  plugins:
+# Set a branch name or version at the `remote_theme` value e.g. `@main` or `@v1.0.0`.
+# Be careful if you omit the branch then automatically will be used `master`. 
+remote_theme: "infotorg/infotorg-api-jekyll-theme@main"
+plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
-  
-  ####
-  # --- Optional configuration ---
-  ####
 
-  # --- Site defaults configuration ---
-  defaults:
-    - scope:
-        path: ""
-      values:
-        # Default layout for any page that doesn't contain 'layout' option in the Front Matter.
-        # (https://jekyllrb.com/docs/step-by-step/03-front-matter/) 
-        layout: "default"
-        show_navigation: true
-  sass:
-    style: compressed # possible values: nested expanded compact compressed
-  
-  
-  # --- Site data configuration ---
-  
-  # Sets a page language in the `<html lang="YOUR-LOCALE">` tag
-  lang: en-US
+####
+# --- Optional configuration ---
+####
 
-  # Sets a visible site title in a page header.
-  # As well used as a part of title in a <title> tag.
-  # For a "Security" page will looks: <title>Security | infotorg API</title>
-  title: infotorg API
+# --- Site defaults configuration ---
+defaults:
+  - scope:
+      path: ""
+    values:
+      # Default layout for any page that doesn't contain 'layout' option in the Front Matter.
+      # (https://jekyllrb.com/docs/step-by-step/03-front-matter/) 
+      layout: "default"
+      show_navigation: true
+sass:
+  style: compressed # possible values: nested expanded compact compressed
 
-  # Sets a visible subtitle under the title on the page
-  subtitle: Onboarding guidelines and documentation
-  
-  # Your Google Analytics GTM-XXXX code
-  google_analytics_tag_manager: ''
-  
-  
-  # --- Swagger UI configuration ---
-  
-  # Path to Open API file name, used for Swagger UI.
-  # As a convention, all Open API files should be stored in the /assets/openapi folder.
-  openapi: '/assets/openapi/eiendom.json'
-  
-  # Swagger UI Theme
-  # If not set will fetch the latest default theme css from an official CDN.
-  # Other available themes:
-  #  - feeling-blue
-  #  - flattop
-  #  - material
-  #  - monokai
-  #  - muted
-  #  - newspaper
-  #  - outline
-  # Theme files are located in the /assets/css/swagger-ui/3.x folder.
-  # Screenshots are available on the https://github.com/ostranme/swagger-ui-themes page.
-  swaggerui_theme: ''
-  ```
+
+# --- Site data configuration ---
+
+# Sets a page language in the `<html lang="YOUR-LOCALE">` tag
+lang: en-US
+
+# Sets a visible site title in a page header.
+# As well used as a part of title in a <title> tag.
+# For a "Security" page will looks: <title>Security | infotorg API</title>
+title: infotorg API
+
+# Sets a visible subtitle under the title on the page
+subtitle: Onboarding guidelines and documentation
+
+# Your Google Analytics GTM-XXXX code
+google_analytics_tag_manager: ''
+
+
+# --- Swagger UI configuration ---
+
+# Path to Open API file name, used for Swagger UI.
+# As a convention, all Open API files should be stored in the /assets/openapi folder.
+openapi: '/assets/openapi/eiendom.json'
+
+# Swagger UI Theme
+# If not set will fetch the latest default theme css from an official CDN.
+# Other available themes:
+#  - feeling-blue
+#  - flattop
+#  - material
+#  - monokai
+#  - muted
+#  - newspaper
+#  - outline
+# Theme files are located in the /assets/css/swagger-ui/3.x folder.
+# Screenshots are available on the https://github.com/ostranme/swagger-ui-themes page.
+swaggerui_theme: ''
+```
 
 Continue to [Install project gems](#install-project-gems)
 
@@ -164,15 +167,15 @@ theme: infotorg-api-jekyll-theme
 
 # --- Site defaults configuration ---
 defaults:
-- scope:
-    path: ""
-  values:
-    # Default layout for any page that doesn't contain 'layout' option in the Front Matter.
-    # (https://jekyllrb.com/docs/step-by-step/03-front-matter/) 
-    layout: "default"
-    show_navigation: true
+  - scope:
+      path: ""
+    values:
+      # Default layout for any page that doesn't contain 'layout' option in the Front Matter.
+      # (https://jekyllrb.com/docs/step-by-step/03-front-matter/) 
+      layout: "default"
+      show_navigation: true
 sass:
-style: compressed # possible values: nested expanded compact compressed
+  style: compressed # possible values: nested expanded compact compressed
 
 
 # --- Site data configuration ---
