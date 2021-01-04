@@ -306,16 +306,18 @@ Each of the layouts injects all needed CSS and JavaScript to render your page co
 #### Default Layout
 
 `default.html` is a flexible HTML layout for the site's landing-page / home-page / index-page. <br/>
-See images bellow
-![Default layout](./docs/images/default-layout-with-dummy-content.png)
-![Default layout mobile](./docs/images/default-layout-mobile-with-dummy-content.png)
+
+![Default layout](docs/images/default-layout-with-dummy-content.png)
+![Default layout mobile](docs/images/default-layout-mobile-with-dummy-content.png)
 
 
 ##### *Main Heading*
 
 The `site.title` variable (see [_config.yml](_config.yml)) sets a heading title for a page.
 As well, it used as a part of title in a `<title>` tag.
-Let's imagine we have a "Security" page that looks like: 
+Let's imagine we have a "Security" page that looks like:
+
+`pages/security.md`
 ```markdown
 ---
 title: Security
@@ -341,7 +343,6 @@ As a result, in the html output we'll have a `page.title` and `site.title` toget
 ```
 
 This is achieved by using [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) plugin.
-@todo add image
 
 
 ### Includes
