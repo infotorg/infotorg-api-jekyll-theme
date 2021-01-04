@@ -1,4 +1,5 @@
 # Jekyll Infotorg APIs theme Quickstart
+
 > Scaffold for a basic Jekyll theme for use as a reference or template
 
 [![Ruby - >=2.3](https://img.shields.io/badge/Ruby->=2.3-green?logo=ruby&logoColor=white)](https://ruby-lang.org)
@@ -66,6 +67,7 @@ Resources:
 - [Adding a theme to your GitHub Pages site using Jekyll](https://help.github.com/en/github/working-with-github-pages/adding-a-theme-to-your-github-pages-site-using-jekyll) guide on Github's help.
 
 ## Installation
+
 >  Install this theme in your project
 
 Two approaches are covered for installing the theme. The Remote Theme approach is necessary for plain [GH Pages](https://pages.github.com/) setup, 
@@ -79,6 +81,7 @@ So you must use this Remote Theme plugin to fetch your custom theme.
 Use the [remote theme](https://github.com/benbalter/jekyll-remote-theme) approach to load a theme using GitHub details.
 
 `_config.yml`
+
 ```yaml
 ####
 # --- Required configuration ---
@@ -222,22 +225,24 @@ swaggerui_theme: ''
 To install from **RubyGems**:
 
 - `Gemfile`
-    ```ruby
-    source "https://rubygems.org"
-    
-    gem "github-pages"
-    gem "infotorg-api-jekyll-theme"
-    ```
+  
+  ```ruby
+  source "https://rubygems.org"
+  
+  gem "github-pages"
+  gem "infotorg-api-jekyll-theme"
+  ```
 
 To install from **GitHub**:
 
 - `Gemfile`
-    ```ruby
-    source "https://rubygems.org"
-    
-    gem "github-pages"
-    gem "infotorg-api-jekyll-theme", git: "https://github.com/coderua/infotorg-api-jekyll-theme", branch: 'main'
-    ```
+  
+  ```ruby
+  source "https://rubygems.org"
+  
+  gem "github-pages"
+  gem "infotorg-api-jekyll-theme", git: "https://github.com/coderua/infotorg-api-jekyll-theme", branch: 'main'
+  ```
 
 ### Install project gems
 
@@ -282,3 +287,40 @@ Where the version at the end is a hash (`123456789abc`) or a tag number (`1.0.0`
 ### Installed dependencies
 
 See the [gemspec](/infotorg-api-jekyll-theme.gemspec) file to see what dependencies get installed. This came with the scaffold. Update minimum Jekyll version.
+
+## Contents At-A-Glance
+
+### Layouts
+
+Refers to files within the `_layouts` directory, that define the markup for your theme.
+
+- `default.html` &mdash; The base layout that lays the foundation for subsequent layouts. The derived layouts inject their contents into this file at the line that says ` {{ content }} ` and are linked to this file via [FrontMatter](https://jekyllrb.com/docs/frontmatter/) declaration `layout: default`.
+- `services.html` &mdash; The layout for your Services list. [[More Info.](#services-layout)]
+- `swagger-ui.html` &mdash; The layout for your [Swagger UI](https://swagger.io/tools/swagger-ui/) documentation that contain FrontMatter: `layout: swagger-ui`. [[More Info.](#swagger-ui-layout)]
+
+#### Default Layout
+
+`default.html` is a flexible HTML layout for the site's landing-page / home-page / index-page. <br/>
+See images bellow
+![Default layout](./docs/images/default-layout-with-dummy-content.png)
+![Default layout mobile](./docs/images/default-layout-mobile-with-dummy-content.png)
+
+Each of the layout injects all needed JavaScript and CSS to render your page correctly.
+
+##### *Main Heading*
+
+The [`site.title`](_config.yml) variable sets a heading title for a landing-page. 
+@todo add image
+
+
+### Includes
+
+Refers to snippets of code within the `_includes` directory that can be inserted in multiple layouts (and another include-file as well) within the same theme-gem.
+
+- `footer.html` &mdash; Defines the site's footer section.
+- `head-app-css.html` &mdash; Inserts CSS links.
+- `head-favicon.html` &mdash; Inserts favicons for different sizes. Icons are located in the [/assets/images/favicon](/assets/images/favicon) directory
+- `head-fonts.html` &mdash; Inserts fonts.
+- `head-google-analytics.html` &mdash; Inserts Google Analytics module.
+- `navigation.html` &mdash; Inserts navigation block (for desktop and mobile devices). Managing by [show_navigation](_config.yml) option in a global [_config.yml](_config.yml) or via FrontMatter: `show_navigation: true/false`
+- `title.html` &mdash; Defines the site's main header section.
