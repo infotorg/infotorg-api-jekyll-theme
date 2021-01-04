@@ -235,7 +235,7 @@ To install from **GitHub**:
     source "https://rubygems.org"
     
     gem "github-pages"
-    gem "infotorg-api-jekyll-theme", git: "https://github.com/coderua/infotorg-api-jekyll-theme"
+    gem "infotorg-api-jekyll-theme", git: "https://github.com/coderua/infotorg-api-jekyll-theme", branch: 'main'
     ```
 
 ### Install project gems
