@@ -289,14 +289,19 @@ Where the version at the end is a hash (`123456789abc`) or a tag number (`1.0.0`
 See the [gemspec](/infotorg-api-jekyll-theme.gemspec) file to see what dependencies get installed. This came with the scaffold. Update minimum Jekyll version.
 
 ## Contents At-A-Glance
+> The theme is based on [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/download/) **v5.0.0-beta1**.
+> 
+> Feel free to use any Bootstrap features in your sites.
 
 ### Layouts
 
-Refers to files within the `_layouts` directory, that define the markup for your theme.
+Refers to files within the [_layouts](_layouts) directory, that define the markup for your theme.
 
-- `default.html` &mdash; The base layout that lays the foundation for subsequent layouts. The derived layouts inject their contents into this file at the line that says ` {{ content }} ` and are linked to this file via [FrontMatter](https://jekyllrb.com/docs/frontmatter/) declaration `layout: default`.
-- `services.html` &mdash; The layout for your Services list. [[More Info.](#services-layout)]
-- `swagger-ui.html` &mdash; The layout for your [Swagger UI](https://swagger.io/tools/swagger-ui/) documentation that contain FrontMatter: `layout: swagger-ui`. [[More Info.](#swagger-ui-layout)]
+- [default.html](_layouts/default.html) &mdash; The base layout that lays the foundation for subsequent layouts. The derived layouts inject their contents into this file at the line that says ` {{ content }} ` and are linked to this file via [FrontMatter](https://jekyllrb.com/docs/frontmatter/) declaration `layout: default`.
+- [services.html](_layouts/services.html) &mdash; The layout for your Services list. [[More Info.](#services-layout)]
+- [swagger-ui.html](_layouts/swagger-ui.html) &mdash; The layout for your [Swagger UI](https://swagger.io/tools/swagger-ui/) documentation that contain FrontMatter: `layout: swagger-ui`. [[More Info.](#swagger-ui-layout)]
+
+Each of the layouts injects all needed CSS and JavaScript to render your page correctly.
 
 #### Default Layout
 
@@ -305,22 +310,74 @@ See images bellow
 ![Default layout](./docs/images/default-layout-with-dummy-content.png)
 ![Default layout mobile](./docs/images/default-layout-mobile-with-dummy-content.png)
 
-Each of the layout injects all needed JavaScript and CSS to render your page correctly.
 
 ##### *Main Heading*
 
-The [`site.title`](_config.yml) variable sets a heading title for a landing-page. 
+The `site.title` variable (see [_config.yml](_config.yml)) sets a heading title for a page.
+As well, it used as a part of title in a `<title>` tag.
+Let's imagine we have a "Security" page that looks like: 
+```markdown
+---
+title: Security
+---
+
+# The Security Guideline
+
+Some other content...
+```
+
+And a configuration in the `_config.yml`:
+```yaml
+#...
+
+title: infotorg API
+
+#...
+```
+
+As a result, in the html output we'll have a `page.title` and `site.title` together, separated by ` | ` delimiter.
+```html
+<title>Security | infotorg API</title>
+```
+
+This is achieved by using [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) plugin.
 @todo add image
 
 
 ### Includes
 
-Refers to snippets of code within the `_includes` directory that can be inserted in multiple layouts (and another include-file as well) within the same theme-gem.
+Refers to snippets of code within the [_includes](_includes) directory that can be inserted in multiple layouts (and another include-file as well) within the same theme-gem.
 
-- `footer.html` &mdash; Defines the site's footer section.
-- `head-app-css.html` &mdash; Inserts CSS links.
-- `head-favicon.html` &mdash; Inserts favicons for different sizes. Icons are located in the [/assets/images/favicon](/assets/images/favicon) directory
-- `head-fonts.html` &mdash; Inserts fonts.
-- `head-google-analytics.html` &mdash; Inserts Google Analytics module.
-- `navigation.html` &mdash; Inserts navigation block (for desktop and mobile devices). Managing by [show_navigation](_config.yml) option in a global [_config.yml](_config.yml) or via FrontMatter: `show_navigation: true/false`
-- `title.html` &mdash; Defines the site's main header section.
+- [footer.html](_includes/footer.html) &mdash; Defines the site's footer section.
+- [head-app-css.html](_includes/head-app-css.html) &mdash; Inserts CSS links.
+- [head-favicon.html](_includes/head-favicon.html) &mdash; Inserts favicons for different sizes. Icons are located in the [/assets/images/favicon](/assets/images/favicon) directory
+- [head-fonts.html](_includes/head-fonts.html) &mdash; Inserts fonts.
+- [head-google-analytics.html](_includes/head-google-analytics.html) &mdash; Inserts Google Analytics module.
+- [navigation.html](_includes/navigation.html) &mdash; Inserts navigation block (for desktop and mobile devices). Managing by [show_navigation](_config.yml) option in a global [_config.yml](_config.yml) or via FrontMatter: `show_navigation: true/false`
+- [title.html](_includes/title.html) &mdash; Defines the site's main header section.
+
+### Sass
+
+Refers to `.scss` files within the [_sass](_sass) directory that define the theme's styles.
+
+- [_variables.scss](_sass/_variables.scss) &mdash; SCSS variables which can be used anywhere in SCSS files.
+- [_bootstrap.scss](_sass/_bootstrap.scss) &mdash; Bootstrap main file.
+- [_bootstrap_variables.scss](_sass/_bootstrap.scss) &mdash; Used to configure bootstrap defaults.
+- [_typography.scss](_sass/_typography.scss) &mdash; Basic typography styles.
+
+### Assets
+
+Refers to various asset files within the [assets](assets) directory.
+
+- [assets/css/main.scss](assets/css/main.scss) &mdash; Imports sass files from within the `_sass` directory and gets processed into the theme's
+  stylesheet: `assets/css/main.css`.
+- [assets/css/print.scss](assets/css/print.scss) &mdash; Print related styles and gets processed into the theme's
+  stylesheet: `assets/css/print.css`
+- [assets/images](assets/images) &mdash; A folder with image assets.
+- [assets/images/favicon](assets/images/favicon) &mdash; A folder contains image assets for favicon.
+- [assets/images/icons](assets/images/icons) &mdash; A folder contains icon image assets.
+- [assets/images/icons/services](assets/images/icons/services) &mdash; A folder contains Infotorg API Services icons. *By default used in the [services layout](#services-layout).
+
+### Plugins
+
+The theme comes with [`jekyll-seo-tag`](https://github.com/jekyll/jekyll-seo-tag) plugin preinstalled to make sure your website gets the most useful meta tags. See [usage](https://github.com/jekyll/jekyll-seo-tag#usage) to know how to set it up.
