@@ -381,4 +381,12 @@ Refers to various asset files within the [assets](assets) directory.
 
 ### Plugins
 
-The theme comes with [`jekyll-seo-tag`](https://github.com/jekyll/jekyll-seo-tag) plugin preinstalled to make sure your website gets the most useful meta tags. See [usage](https://github.com/jekyll/jekyll-seo-tag#usage) to know how to set it up.
+The theme comes with [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) plugin preinstalled to make sure your website gets the most useful meta tags. See [usage](https://github.com/jekyll/jekyll-seo-tag#usage) to know how to set it up.
+
+## Usage
+
+### Enabling Google Analytics
+To enable Google Analytics, add the following lines to your Jekyll site:
+```yaml
+google_analytics_tag_manager: GTM-XXXX
+```
