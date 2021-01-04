@@ -6,6 +6,7 @@
 [![Bootstrap - 5](https://img.shields.io/badge/Bootstrap-5-green?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](#license)
 
+[Theme preview](https://coderua.github.io/infotorg-api-jekyll-theme/)
 ![Theme screenshot](screenshot.png)
 
 ## How to use this project
