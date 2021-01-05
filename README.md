@@ -161,7 +161,7 @@ Install project gems.
 $ bundle install
 ```
 
-### Development
+### Development and testing
 To set up your environment to develop this theme, run `bundle install`.
 
 To test the theme, run `bundle exec jekyll serve --livereload --trace` and open your browser at [http://localhost:4000/](http://localhost:4000/). This starts a Jekyll server. As modifications are made to the theme and test site, it will regenerate and you should see the changes in the browser without a refresh.
@@ -198,7 +198,7 @@ See the [gemspec](/infotorg-api-jekyll-theme.gemspec) file to see what dependenc
 
 ### Configuration
 
-Settings that affect your entire site can be changed in [Jekyll’s configuration file](https://jekyllrb.com/docs/configuration/): _config.yml, found in the root of your project. If you don’t have this file you’ll need to copy or create one using the theme’s default [_config.yml](_config.yml) as a base.
+Settings that affect your entire site can be changed in [Jekyll’s configuration file](https://jekyllrb.com/docs/configuration/): `_config.yml`, found in the root of your project. If you don’t have this file you’ll need to copy or create one using the theme’s default [_config.yml](_config.yml) as a base.
 
 >**Note:** for technical reasons, _config.yml is NOT reloaded automatically when used with jekyll serve. If you make any changes to this file, please restart the server process for them to be applied.
 
@@ -280,11 +280,11 @@ Customize site navigational links through a Jekyll data file [_data/navigation.y
 
 - name: Onboarding
   link: /onboarding
-  show: false
+  show: false # won't be presented in a navigation
 
 - name: FAQ
   link: https://faq.socialboards.com/infotorg/
-  target: _blank
+  target: _blank # will opened in a new tab
   show: true
 ```
 
