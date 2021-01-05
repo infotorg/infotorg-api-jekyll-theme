@@ -390,3 +390,7 @@ To enable Google Analytics, add the following lines to your Jekyll site:
 ```yaml
 google_analytics_tag_manager: GTM-XXXX
 ```
+
+## License
+
+Distributed under the [MIT License](LICENSE.md).
