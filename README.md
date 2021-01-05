@@ -32,11 +32,12 @@ If you forked or downloaded the theme repo you can safely remove the following f
 - `infotorg-api-jekyll-theme.gemspec`
 - `README.md`
 - `screenshot.png`
-- not needed files from `/pages` folder
+- any not needed files from `/pages` folder
+- update `_data/navigation.yml` file
 
 ### Demo
 
-View a live demo on GH Pages:
+View a live demo on GitHub Pages:
 
 <div align="center">
 
@@ -96,66 +97,8 @@ remote_theme: "infotorg/infotorg-api-jekyll-theme@main"
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
-
-####
-# --- Optional configuration ---
-####
-
-# --- Site defaults configuration ---
-defaults:
-  - scope:
-      path: ""
-    values:
-      # Default layout for any page that doesn't contain 'layout' option in the Front Matter.
-      # (https://jekyllrb.com/docs/step-by-step/03-front-matter/) 
-      layout: "default"
-      show_navigation: true
-sass:
-  style: compressed # possible values: nested expanded compact compressed
-
-
-# --- Site data configuration ---
-
-# Sets a page language in the `<html lang="YOUR-LOCALE">` tag
-lang: en-US
-
-# Sets a visible site title in a page header.
-# As well used as a part of title in a <title> tag.
-# For a "Security" page will looks: <title>Security | infotorg API</title>
-title: infotorg API
-
-# Sets a visible subtitle under the title on the page
-subtitle: Onboarding guidelines and documentation
-
-# Sets a direct url to a product on the Infotorg.no website. Default: https://www.infotorg.no/
-product_url: ''
-# Sets the product link title. Default: Infotorg.no
-product_url_title: ''
-
-# Your Google Analytics GTM-XXXX code
-google_analytics_tag_manager: ''
-
-
-# --- Swagger UI configuration ---
-
-# Path to Open API file name, used for Swagger UI.
-# As a convention, all Open API files should be stored in the /assets/openapi folder.
-openapi: '/assets/openapi/eiendom.json'
-
-# Swagger UI Theme
-# If not set will fetch the latest default theme css from an official CDN.
-# Other available themes:
-#  - feeling-blue
-#  - flattop
-#  - material
-#  - monokai
-#  - muted
-#  - newspaper
-#  - outline
-# Theme files are located in the /assets/css/swagger-ui/3.x folder.
-# Screenshots are available on the https://github.com/ostranme/swagger-ui-themes page.
-swaggerui_theme: ''
 ```
+Other available options can be added later. See [[Configuration](#configuration)] section.
 
 Continue to [Install project gems](#install-project-gems)
 
@@ -174,66 +117,9 @@ Update your project's `_config.yaml`:
 # --- Required configuration ---
 ####
 theme: infotorg-api-jekyll-theme
-
-####
-# --- Optional configuration ---
-####
-
-# --- Site defaults configuration ---
-defaults:
-  - scope:
-      path: ""
-    values:
-      # Default layout for any page that doesn't contain 'layout' option in the Front Matter.
-      # (https://jekyllrb.com/docs/step-by-step/03-front-matter/) 
-      layout: "default"
-      show_navigation: true
-sass:
-  style: compressed # possible values: nested expanded compact compressed
-
-
-# --- Site data configuration ---
-
-# Sets a page language in the `<html lang="YOUR-LOCALE">` tag
-lang: en-US
-
-# Sets a visible site title in a page header.
-# As well used as a part of title in a <title> tag.
-# For a "Security" page will looks: <title>Security | infotorg API</title>
-title: infotorg API
-
-# Sets a visible subtitle under the title on the page
-subtitle: Onboarding guidelines and documentation
-
-# Sets a direct url to a product on the Infotorg.no website. Default: https://www.infotorg.no/
-product_url: ''
-# Sets the product link title. Default: Infotorg.no
-product_url_title: ''
-
-# Your Google Analytics GTM-XXXX code
-google_analytics_tag_manager: ''
-
-
-# --- Swagger UI configuration ---
-
-# Path to Open API file name, used for Swagger UI.
-# As a convention, all Open API files should be stored in the /assets/openapi folder.
-openapi: '/assets/openapi/eiendom.json'
-
-# Swagger UI Theme
-# If not set will fetch the latest default theme css from an official CDN.
-# Other available themes:
-#  - feeling-blue
-#  - flattop
-#  - material
-#  - monokai
-#  - muted
-#  - newspaper
-#  - outline
-# Theme files are located in the /assets/css/swagger-ui/3.x folder.
-# Screenshots are available on the https://github.com/ostranme/swagger-ui-themes page.
-swaggerui_theme: ''
 ```
+
+Other available options can be added later. See [[Configuration](#configuration)] section.
 
 #### 2. Add to Gemfile
 
@@ -309,9 +195,6 @@ Where the version at the end is a hash (`123456789abc`) or a tag number (`1.0.0`
 See the [gemspec](/infotorg-api-jekyll-theme.gemspec) file to see what dependencies get installed. This came with the scaffold. Update minimum Jekyll version.
 
 ## Contents At-A-Glance
-> The theme is based on [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/download/) **v5.0.0-beta1**.
-> 
-> Feel free to use any Bootstrap features in your sites.
 
 ### Configuration
 
@@ -321,14 +204,57 @@ Settings that affect your entire site can be changed in [Jekyll’s configuratio
 
 Take a moment to look over the configuration file included with the theme. Comments have been added to provide examples and default values for most settings.
 
+##### Site Title or *Main Heading*
+
+The `site.title` variable (see [_config.yml](_config.yml)) sets a heading title for a page.
+
+`_config.yml`:
+```yaml
+title: infotorg API
+```
+
+![Site title](docs/screenshots/site.title.png)
+
+It used as a part of title in a `<title>` tag as well.
+Let's imagine we have a "Security" page that looks like:
+
+`pages/security.md`
+```markdown
+---
+title: Security
+---
+
+# The Security Guideline
+
+Some other content...
+```
+
+And a configuration in the `_config.yml`:
+```yaml
+#...
+
+title: infotorg API
+
+#...
+```
+
+As a result, in the html output we'll have a `page.title` and `site.title` together, separated by ` | ` delimiter.
+```html
+<title>Security | infotorg API</title>
+```
+
+This is achieved by using [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) plugin.
+
+
 #### Site Subtitle
 
-`_config.yml`
+The `site.subtitle` sets a visible subtitle under the title on the page. 
+`_config.yml`:
 ```yaml
 subtitle: Onboarding guidelines and documentation
 ```
 
-![Default layout](docs/screenshots/subtitle.jpg)
+![Site subtitle](docs/screenshots/site.subtitle.png)
 
 
 #### Enabling Google Analytics
@@ -338,6 +264,9 @@ google_analytics_tag_manager: GTM-XXXX
 ```
 
 ### Navigation
+
+![Site navigation](docs/screenshots/navigation.png)
+
 Customize site navigational links through a Jekyll data file [_data/navigation.yml](_data/navigation.yml)
 
 ```yaml
@@ -368,6 +297,10 @@ Optional keys:
 
 The bread and butter of any theme. Below you’ll find the layouts included with the theme, what they look like and the type of content they’ve been built for.
 
+> **NOTE:** The theme is based on [Bootstrap](https://getbootstrap.com/docs/5.0/getting-started/download/) **v5.0.0-beta1**.
+>
+> Feel free to use any Bootstrap features in your sites.
+
 Refers to files within the [_layouts](_layouts) directory, that define the markup for your theme.
 
 - [default.html](_layouts/default.html) &mdash; The base layout that lays the foundation for subsequent layouts. The derived layouts inject their contents into this file at the line that says ` {{ content }} ` and are linked to this file via [FrontMatter](https://jekyllrb.com/docs/frontmatter/) declaration `layout: default`.
@@ -381,39 +314,6 @@ Each of the layouts injects all needed CSS and JavaScript to render your page co
 [`default.html`](_layouts/default.html) is a flexible HTML layout for the site's landing-page / home-page / index-page. <br/>
 
 ![Default layout](docs/screenshots/default-layout-with-dummy-content.png)
-
-##### *Main Heading*
-
-The `site.title` variable (see [_config.yml](_config.yml)) sets a heading title for a page.
-As well, it used as a part of title in a `<title>` tag.
-Let's imagine we have a "Security" page that looks like:
-
-`pages/security.md`
-```markdown
----
-title: Security
----
-
-# The Security Guideline
-
-Some other content...
-```
-
-And a configuration in the `_config.yml`:
-```yaml
-#...
-
-title: infotorg API
-
-#...
-```
-
-As a result, in the html output we'll have a `page.title` and `site.title` together, separated by ` | ` delimiter.
-```html
-<title>Security | infotorg API</title>
-```
-
-This is achieved by using [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) plugin.
 
 #### Services Layout
 
