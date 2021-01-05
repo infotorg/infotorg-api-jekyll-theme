@@ -313,7 +313,60 @@ See the [gemspec](/infotorg-api-jekyll-theme.gemspec) file to see what dependenc
 > 
 > Feel free to use any Bootstrap features in your sites.
 
+### Configuration
+
+Settings that affect your entire site can be changed in [Jekyll’s configuration file](https://jekyllrb.com/docs/configuration/): _config.yml, found in the root of your project. If you don’t have this file you’ll need to copy or create one using the theme’s default [_config.yml](_config.yml) as a base.
+
+>**Note:** for technical reasons, _config.yml is NOT reloaded automatically when used with jekyll serve. If you make any changes to this file, please restart the server process for them to be applied.
+
+Take a moment to look over the configuration file included with the theme. Comments have been added to provide examples and default values for most settings.
+
+#### Site Subtitle
+
+`_config.yml`
+```yaml
+subtitle: Onboarding guidelines and documentation
+```
+
+![Default layout](docs/screenshots/subtitle.jpg)
+
+
+#### Enabling Google Analytics
+To enable Google Analytics, add the following lines to your Jekyll site:
+```yaml
+google_analytics_tag_manager: GTM-XXXX
+```
+
+### Navigation
+Customize site navigational links through a Jekyll data file [_data/navigation.yml](_data/navigation.yml)
+
+```yaml
+- name: Overview
+  link: /
+  show: true
+
+- name: Security
+  link: /security
+  show: true
+
+- name: Onboarding
+  link: /onboarding
+  show: false
+
+- name: FAQ
+  link: https://faq.socialboards.com/infotorg/
+  target: _blank
+  show: true
+```
+
+Optional keys:
+- `target` - adds a `target` html attribute to a navigation link. Possible values are: `_self`, `_blank`, `_parent`, `_top`. [[More details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)]
+- `show` - Boolean flag shows/hides the navigation item. Possible values: `true`, `false`.
+
+
 ### Layouts
+
+The bread and butter of any theme. Below you’ll find the layouts included with the theme, what they look like and the type of content they’ve been built for.
 
 Refers to files within the [_layouts](_layouts) directory, that define the markup for your theme.
 
@@ -325,11 +378,9 @@ Each of the layouts injects all needed CSS and JavaScript to render your page co
 
 #### Default Layout
 
-`default.html` is a flexible HTML layout for the site's landing-page / home-page / index-page. <br/>
+[`default.html`](_layouts/default.html) is a flexible HTML layout for the site's landing-page / home-page / index-page. <br/>
 
-![Default layout](docs/images/default-layout-with-dummy-content.png)
-![Default layout mobile](docs/images/default-layout-mobile-with-dummy-content.png)
-
+![Default layout](docs/screenshots/default-layout-with-dummy-content.png)
 
 ##### *Main Heading*
 
@@ -363,6 +414,32 @@ As a result, in the html output we'll have a `page.title` and `site.title` toget
 ```
 
 This is achieved by using [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) plugin.
+
+#### Services Layout
+
+[services.html](_layouts/services.html) based on the default layout to show a list of services defined in the [_data/services.yml](_data/services.yml) file.
+
+![Services layout](docs/screenshots/services-layout.png)
+
+#### Swagger UI Layout
+
+[services.html](_layouts/services.html) is a flexible HTML layout for the to show Swagger UI.
+
+![Swagger-UI layout](docs/screenshots/swagger-ui-layout.png)
+
+Path to Open API file can be set in the `openapi` option in the [_config.yml](_config.yml) or via FrontMatter: `openapi: /assets/openapi/YOUR_OPEN_API_FILE`
+
+`pages/swagger-ui.html`
+```yaml
+---
+layout: swagger-ui
+title: Swagger UI
+permalink: swagger-ui
+openapi: /assets/openapi/YOUR_OPEN_API_FILE
+---
+```
+
+> **NOTE:** As a convention, all Open API files should be stored in the `/assets/openapi` folder.
 
 
 ### Includes
@@ -403,14 +480,6 @@ Refers to various asset files within the [assets](assets) directory.
 
 The theme comes with [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) plugin preinstalled to make sure your website gets the most useful meta tags. See [usage](https://github.com/jekyll/jekyll-seo-tag#usage) to know how to set it up.
 
-
-## Usage
-
-### Enabling Google Analytics
-To enable Google Analytics, add the following lines to your Jekyll site:
-```yaml
-google_analytics_tag_manager: GTM-XXXX
-```
 
 ## License
 
