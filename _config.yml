@@ -30,6 +30,11 @@ title: infotorg API
 # Sets a visible subtitle under the title on the page
 subtitle: Onboarding guidelines and documentation
 
+# Sets a direct url to a product on the Infotorg.no website. Default: https://www.infotorg.no/
+product_url: ''
+# Sets the product link title. Default: Infotorg.no
+product_url_title: ''
+
 # Your Google Analytics GTM-XXXX code
 google_analytics_tag_manager: ''
 

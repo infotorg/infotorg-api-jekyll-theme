@@ -1,7 +1,9 @@
 <footer class="footer mt-auto py-4">
     <div class="container pt-4 d-flex">
         <div class="flex-grow-1">
-            <a href="https://www.infotorg.no/">Infotorg.no</a>
+            <a href="{{ site.product_url | default: 'https://www.infotorg.no/' }}">
+                {{ site.product_url_title | default: 'Infotorg.no' }}
+            </a>
         </div>
         <div class="company">
             <span class="service-from-text">En tjeneste fra</span>
