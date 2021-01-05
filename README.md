@@ -1,4 +1,4 @@
-# Jekyll Infotorg APIs theme Quickstart
+# Jekyll Infotorg APIs theme
 
 > Scaffold for a basic Jekyll theme for use as a reference or template
 
@@ -6,6 +6,9 @@
 [![Jekyll - 3.9](https://img.shields.io/badge/Jekyll-3.9-green?logo=jekyll&logoColor=white)](https://jekyllrb.com)
 [![Bootstrap - 5](https://img.shields.io/badge/Bootstrap-5-green?logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green)](#license)
+
+Infotorg API Jekyll theme has been developed as a [Gem-based](http://jekyllrb.com/docs/themes/) theme for easier use, 
+and 100% compatible with GitHub Pages when used as a remote theme.
 
 [Theme preview](https://coderua.github.io/infotorg-api-jekyll-theme/)
 ![Theme screenshot](screenshot.png)
@@ -21,6 +24,15 @@ Create a new project from this template. Or just use the code or docs here as a 
 [![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?style=for-the-badge&logo=github)](https://github.com/coderua/infotorg-api-jekyll-theme/generate)
 
 </div>
+
+### Remove the Unnecessary
+If you forked or downloaded the theme repo you can safely remove the following folders and files:
+
+- `/docs`
+- `infotorg-api-jekyll-theme.gemspec`
+- `README.md`
+- `screenshot.png`
+- not needed files from `/pages` folder
 
 ### Demo
 
@@ -44,14 +56,6 @@ A good example of a theme is Minima, which is the default theme used when runnin
 
 ## About
 
-### Where this project comes from
-
-The theme scaffold was generated with this command and Jekyll 4:
-
-```sh
-$ jekyll new NAME
-```
-
 ### Package a theme
 
 The part that allows this project gem to be packaged as an installable gem-based theme is this file:
@@ -70,10 +74,9 @@ Resources:
 
 >  Install this theme in your project
 
-Two approaches are covered for installing the theme. The Remote Theme approach is necessary for plain [GH Pages](https://pages.github.com/) setup, 
-while the second approach needs some kind of CI like GitHub Actions, Netlify or local development/build. Both require only a few lines of code.
+There are three ways to install: as a [gem-based theme](https://jekyllrb.com/docs/themes/#understanding-gem-based-themes), as a [remote theme](https://github.blog/2017-11-29-use-any-theme-with-github-pages/) (GitHub Pages compatible), or [forking](https://github.com/coderua/infotorg-api-jekyll-theme/generate)/directly copying all of the theme files into your project.
 
-### GitHub Pages Remote Theme flow
+### Remote Theme method
 
 Only a few [standard themes](https://pages.github.com/themes/) are available on the locked GH Pages environment. 
 So you must use this Remote Theme plugin to fetch your custom theme.
@@ -156,9 +159,11 @@ swaggerui_theme: ''
 
 Continue to [Install project gems](#install-project-gems)
 
-### Custom CI/local flow
+### Gem-based method
 
 While gems are locked on GH Pages, you can install custom gems like a theme if you use a CI flow. Such as with GH Actions or Netlifym.
+
+With Gem-based themes, directories such as the assets, `_layouts`, `_includes`, and `_sass` are stored in the theme’s gem, hidden from your immediate view. Yet all of the necessary directories will be read and processed during Jekyll’s build process.
 
 #### 1. Add to your config
 
@@ -270,6 +275,11 @@ Install project gems.
 $ bundle install
 ```
 
+### Development
+To set up your environment to develop this theme, run `bundle install`.
+
+To test the theme, run `bundle exec jekyll serve --livereload --trace` and open your browser at [http://localhost:4000/](http://localhost:4000/). This starts a Jekyll server. As modifications are made to the theme and test site, it will regenerate and you should see the changes in the browser without a refresh.
+
 ### Installed path
 
 Useful info for understanding where your theme gets installed based on the approach.
@@ -280,11 +290,11 @@ Themes downloaded from RubyGems usually install here:
 
 - `vendor/bundle/ruby/RUBY_VERSION/gems/THEME_NAME-THEME_VERSION`
 
-#### GH Pages Remote Theme flow
+#### Remote Theme method
 
 The Remote Theme plugin stores the theme in memory and not on disk with gems.
 
-#### Custom CI/local flow
+#### Gem-based method
 
 If you added your theme to your Gemfile directly and installed from GitHub URL, it will get installed here:
 
@@ -392,6 +402,7 @@ Refers to various asset files within the [assets](assets) directory.
 ### Plugins
 
 The theme comes with [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag) plugin preinstalled to make sure your website gets the most useful meta tags. See [usage](https://github.com/jekyll/jekyll-seo-tag#usage) to know how to set it up.
+
 
 ## Usage
 
