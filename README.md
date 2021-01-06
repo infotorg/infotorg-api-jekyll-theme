@@ -204,9 +204,50 @@ Settings that affect your entire site can be changed in [Jekyll’s configuratio
 
 Take a moment to look over the configuration file included with the theme. Comments have been added to provide examples and default values for most settings.
 
+##### Front Matter Defaults
+To save yourself time setting [Front Matter Defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/) for pages is the way to go. Sure you can assign `layout` and toggle settings like `show_navigation`in each file, but that’s not ideal.
+
+Using the `default` key in [_config.yml](_config.yml) you could set the `layout` and enable/disable navigation for all pages — in one shot.
+
+Instead of adding `layout: "default"` and `show_navigation: true` to each page, apply as defaults in like so:
+
+`_config.yml`
+```yaml
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+      show_navigation: true
+```
+
+To change `layout` add `layout: <LAYOUT_NAME>` to its YAML Front Matter, overriding what was set in _config.yml.
+The same with the `show_navigation`.
+
+Example:
+```yaml
+---
+layout: layout_name
+show_navigation: false
+---
+````
+
+##### Site language
+
+[site.lang](_config.yml) is used to declare the primary language for each web page within the site.
+
+Example: `lang: "en-US"` sets the lang attribute for the site to the United States flavor of English, while `en-GB` would be for the United Kingdom style of English. Country codes are optional and the shorter variation `lang: "en"` is also acceptable. 
+To find your language and country codes check this [reference table](https://msdn.microsoft.com/en-us/library/ee825488(v=cs.20).aspx).
+
+`_config.yml`:
+```yaml
+lang: "en-US"
+```
+
+
 ##### Site Title or *Main Heading*
 
-The `site.title` variable (see [_config.yml](_config.yml)) sets a heading title for a page.
+[site.title](_config.yml) is used to set a heading title for a page.
 
 `_config.yml`:
 ```yaml

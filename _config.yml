@@ -20,7 +20,7 @@ plugins:
 # --- Site data configuration ---
 
 # Sets a page language in the `<html lang="YOUR-LOCALE">` tag
-lang: en-US
+lang: "en-US"
 
 # Sets a visible site title in a page header.
 # As well used as a part of title in a <title> tag.
