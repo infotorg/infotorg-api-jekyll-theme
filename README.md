@@ -300,8 +300,6 @@ subtitle: Onboarding guidelines and documentation
 
 #### Url to a Product page
 
-![Site subtitle](docs/screenshots/site.product_url.png)
-
 `product_url` used to set a direct **url** to a product on the Infotorg.no website. *Default:* https://www.infotorg.no/
 
 `_config.yml`:
@@ -315,6 +313,9 @@ product_url: "https://www.infotorg.no/"
 ```yaml
 product_url_title: "Infotorg.no"
 ```
+
+![Site subtitle](docs/screenshots/site.product_url.png)
+
 
 #### Enabling Google Analytics
 To enable Google Analytics, add the following lines to your Jekyll site:
