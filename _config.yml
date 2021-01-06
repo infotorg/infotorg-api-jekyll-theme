@@ -1,7 +1,11 @@
-# If you use the them as a remote one, uncomment `remote_theme` configuration.
+# If you use the theme as a remote one, uncomment `remote_theme` configuration.
 # Set a branch name or version at the `remote_theme` value e.g. `@main` or `@v1.0.0`.
 # Be careful if you omit the branch then automatically will be used `master`.
 #remote_theme: "infotorg/infotorg-api-jekyll-theme@main"
+
+# If you use gem-based theme, uncomment this line
+#theme: "infotorg-api-jekyll-theme"
+
 
 # --- Site default configuration ---
 defaults:
