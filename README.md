@@ -289,7 +289,8 @@ This is achieved by using [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-
 
 #### Site Subtitle
 
-The `site.subtitle` sets a visible subtitle under the title on the page. 
+The `site.subtitle` sets a visible subtitle under the title on the page.
+
 `_config.yml`:
 ```yaml
 subtitle: Onboarding guidelines and documentation
@@ -297,12 +298,30 @@ subtitle: Onboarding guidelines and documentation
 
 ![Site subtitle](docs/screenshots/site.subtitle.png)
 
+#### Url to a Product page
+
+![Site subtitle](docs/screenshots/site.product_url.png)
+
+`product_url` used to set a direct **url** to a product on the Infotorg.no website. *Default:* https://www.infotorg.no/
+
+`_config.yml`:
+```yaml
+product_url: "https://www.infotorg.no/"
+```
+
+`product_url_title` used to set Sets the product link **title**. *Default:* Infotorg.no
+
+`_config.yml`:
+```yaml
+product_url_title: "Infotorg.no"
+```
 
 #### Enabling Google Analytics
 To enable Google Analytics, add the following lines to your Jekyll site:
 ```yaml
 google_analytics_tag_manager: GTM-XXXX
 ```
+
 
 ### Navigation
 
