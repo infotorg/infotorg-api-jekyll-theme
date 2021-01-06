@@ -10,7 +10,7 @@
 Infotorg API Jekyll theme has been developed as a [Gem-based](http://jekyllrb.com/docs/themes/) theme for easier use, 
 and 100% compatible with GitHub Pages when used as a remote theme.
 
-[Theme preview](https://coderua.github.io/infotorg-api-jekyll-theme/)
+[Theme preview](https://infotorg.github.io/infotorg-api-jekyll-theme/)
 ![Theme screenshot](screenshot.png)
 
 ## How to use this project
@@ -21,7 +21,7 @@ Create a new project from this template. Or just use the code or docs here as a 
 
 <div align="center">
 
-[![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?style=for-the-badge&logo=github)](https://github.com/coderua/infotorg-api-jekyll-theme/generate)
+[![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?style=for-the-badge&logo=github)](https://github.com/infotorg/infotorg-api-jekyll-theme/generate)
 
 </div>
 
@@ -41,7 +41,7 @@ View a live demo on GitHub Pages:
 
 <div align="center">
 
-[![GH Pages - View demo](https://img.shields.io/badge/GH_Pages-View_demo-green?style=for-the-badge)](https://coderua.github.io/infotorg-api-jekyll-theme/)
+[![GH Pages - View demo](https://img.shields.io/badge/GH_Pages-View_demo-green?style=for-the-badge)](https://infotorg.github.io/infotorg-api-jekyll-theme/)
 
 </div>
 
@@ -75,7 +75,7 @@ Resources:
 
 >  Install this theme in your project
 
-There are three ways to install: as a [gem-based theme](https://jekyllrb.com/docs/themes/#understanding-gem-based-themes), as a [remote theme](https://github.blog/2017-11-29-use-any-theme-with-github-pages/) (GitHub Pages compatible), or [forking](https://github.com/coderua/infotorg-api-jekyll-theme/generate)/directly copying all of the theme files into your project.
+There are three ways to install: as a [gem-based theme](https://jekyllrb.com/docs/themes/#understanding-gem-based-themes), as a [remote theme](https://github.blog/2017-11-29-use-any-theme-with-github-pages/) (GitHub Pages compatible), or [forking](https://github.com/infotorg/infotorg-api-jekyll-theme/generate)/directly copying all of the theme files into your project.
 
 ### Remote Theme method
 
@@ -142,7 +142,7 @@ To install from **GitHub**:
   source "https://rubygems.org"
   
   gem "github-pages"
-  gem "infotorg-api-jekyll-theme", git: "https://github.com/coderua/infotorg-api-jekyll-theme", branch: 'main'
+  gem "infotorg-api-jekyll-theme", git: "https://github.com/infotorg/infotorg-api-jekyll-theme", branch: 'main'
   ```
 
 ### Install project gems
