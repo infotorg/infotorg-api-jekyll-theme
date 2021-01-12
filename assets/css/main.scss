@@ -230,3 +230,21 @@
 .table thead > tr > th {
     vertical-align: middle;
 }
+
+.action-go {
+    padding: 10px 16px;
+    margin-right: 20px;
+}
+.action-go:after {
+    display: inline-block;
+    content: "";
+    width: 28px;
+    height: 29px;
+    background-image: url(../images/icons/action-go.svg);
+    background-repeat: no-repeat;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.action-go:hover:after {
+    background-image: url(../images/icons/action-go-outline.svg);
+}

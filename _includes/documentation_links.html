@@ -1,0 +1,17 @@
+{% assign links = include.links | where:'show', true %}
+
+{% if links.size > 0 %}
+    <p class="mb-3">Refer to the documentation by the links below:</p>
+
+    <div class="pt-3">
+    {% for item in links %}
+        <a
+            href="{{ item.link }}"
+            {% if item.target %}target="{{ item.target }}"{% endif %}
+            class="btn btn-outline-secondary action-go"
+        >
+            {{ item.name }}
+        </a>
+    {% endfor %}
+    </div>
+{% endif %}
