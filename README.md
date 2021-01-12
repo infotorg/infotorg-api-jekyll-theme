@@ -328,7 +328,7 @@ google_analytics_tag_manager: GTM-XXXX
 
 ![Site navigation](docs/screenshots/navigation.png)
 
-Customize site navigational links through a Jekyll data file [_data/navigation.yml](_data/navigation.yml)
+Customize a site navigational links through a Jekyll data file [_data/navigation.yml](_data/navigation.yml)
 
 ```yaml
 - name: Overview
@@ -354,6 +354,57 @@ Optional keys:
 - `show` - Boolean flag shows/hides the navigation item. Possible values: `true`, `false`.
 
 
+### External documentation links
+
+The theme gives you an ability to easily show links to external documentation resources.
+
+![Documentation links screenshot](docs/screenshots/documentation-links.png)
+
+#### How to use it
+1. Create a file with links to the documentation resources. By default, this is [_data/documentation_links.yml](_data/documentation_links.yml).
+
+  `_data/documentation_links.yml` 
+  ```yaml
+  - name: WSDL
+    link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl
+    target: _blank
+    show: true
+  
+  - name: XSD
+    link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd
+    target: _blank
+    show: true
+  
+  - name: Documentation
+    link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd.xhtml
+    target: _blank
+    show: true  
+  ```
+  Optional keys:
+  - `target` - adds a `target` html attribute to a navigation link. Possible values are: `_self`, `_blank`, `_parent`, `_top`. [[More details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)]
+  - `show` - Boolean flag shows/hides the item. Possible values: `true`, `false`.
+2. On a page you need the resources link use [documentation](_layouts/documentation.html) layout
+```yaml
+---
+layout: documentation
+title: Documentation
+permalink: documentation
+---
+```
+
+Or you can manually include navigation links instead of using layout.
+```markdown
+---
+title: Documentation
+permalink: documentation
+---
+<h1>{{ page.title }}</h1>
+
+{% include documentation_links.html links=site.data.documentation_links %}
+```
+[documentation_links](_data/documentation_links.yml) requires only links [[see-step-1-above](#how_to_use_it)].
+
+
 ### Layouts
 
 The bread and butter of any theme. Below you’ll find the layouts included with the theme, what they look like and the type of content they’ve been built for.
@@ -365,6 +416,7 @@ The bread and butter of any theme. Below you’ll find the layouts included with
 Refers to files within the [_layouts](_layouts) directory, that define the markup for your theme.
 
 - [default.html](_layouts/default.html) &mdash; The base layout that lays the foundation for subsequent layouts. The derived layouts inject their contents into this file at the line that says ` {{ content }} ` and are linked to this file via [FrontMatter](https://jekyllrb.com/docs/frontmatter/) declaration `layout: default`.
+- [documentation.html](_layouts/documentation.html) &mdash; The layout for automatic output external documentation links. [[More Info.](#documentation-layout)]
 - [services.html](_layouts/services.html) &mdash; The layout for your Services list. [[More Info.](#services-layout)]
 - [swagger-ui.html](_layouts/swagger-ui.html) &mdash; The layout for your [Swagger UI](https://swagger.io/tools/swagger-ui/) documentation that contain FrontMatter: `layout: swagger-ui`. [[More Info.](#swagger-ui-layout)]
 
@@ -375,6 +427,12 @@ Each of the layouts injects all needed CSS and JavaScript to render your page co
 [`default.html`](_layouts/default.html) is a flexible HTML layout for the site's landing-page / home-page / index-page. <br/>
 
 ![Default layout](docs/screenshots/default-layout-with-dummy-content.png)
+
+#### Documentation Layout
+
+[documentation.html](_layouts/documentation.html) based on the default layout to show a list of links to external documentation defined in the [_data/documentation_links.yml](_data/documentation_links.yml) file.
+
+![Documentation layout](docs/screenshots/documentation-layout.png)
 
 #### Services Layout
 
@@ -414,6 +472,7 @@ Refers to snippets of code within the [_includes](_includes) directory that can 
 - [head-google-analytics.html](_includes/head-google-analytics.html) &mdash; Inserts Google Analytics module.
 - [navigation.html](_includes/navigation.html) &mdash; Inserts navigation block (for desktop and mobile devices). Managing by [show_navigation](_config.yml) option in a global [_config.yml](_config.yml) or via FrontMatter: `show_navigation: true/false`
 - [title.html](_includes/title.html) &mdash; Defines the site's main header section.
+- [documentation_links.html](_includes/documentation_links.html) &mdash; Output [external documentation links](#external-documentation-links).
 
 ### Sass
 
