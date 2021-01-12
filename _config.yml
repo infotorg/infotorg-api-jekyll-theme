@@ -38,10 +38,6 @@ product_url_title: ''
 # Your Google Analytics GTM-XXXX code
 google_analytics_tag_manager: ''
 
-# --- SOAP service documentation links (WSDL, XSD, Documentation, etc) ---
-# Make sense only for SOAP services.
-show_soap_documentation_links: true
-
 
 # --- Swagger UI configuration ---
 # Make sense for REST services.
