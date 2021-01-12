@@ -44,6 +44,7 @@ google_analytics_tag_manager: ''
 
 
 # --- Swagger UI configuration ---
+# Make sense for REST services.
 
 # Path to Open API file name, used for Swagger UI.
 # As a convention, all Open API files should be stored in the /assets/openapi folder.

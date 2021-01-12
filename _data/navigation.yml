@@ -6,8 +6,8 @@
   link: /
   show: true
 
-- name: Domain
-  link: /domain
+- name: Documentation
+  link: /documentation
   show: true
 
 - name: Security

@@ -1,0 +1,14 @@
+- name: WSDL
+  link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl
+  target: _blank
+  show: true
+
+- name: XSD
+  link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd
+  target: _blank
+  show: true
+
+- name: Documentation
+  link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd.xhtml
+  target: _blank
+  show: true
