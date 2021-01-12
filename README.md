@@ -392,8 +392,8 @@ permalink: documentation
 ---
 ```
 
-Or you can manually include navigation links instead of using layout.
-```markdown
+Or you can manually include documentations links instead of using layout.
+```html
 ---
 title: Documentation
 permalink: documentation
@@ -402,7 +402,9 @@ permalink: documentation
 
 {% include documentation_links.html links=site.data.documentation_links %}
 ```
-[documentation_links](_data/documentation_links.yml) requires only links [[see-step-1-above](#how_to_use_it)].
+[documentation_links](_includes/documentation_links.html) requires only links [[see step 1 above](#how-to-use-it)].
+
+> NOTE: a page where you're including the `documentation_links` should have the `.html` extension, not `.md`.
 
 
 ### Layouts
