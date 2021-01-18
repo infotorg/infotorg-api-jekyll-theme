@@ -28,12 +28,15 @@
     <div class="container layout-{{ page.layout }}">
         {{ content }}
 
+        {% if page.show_cube_bg == true %}
         <div class="bg-cube"></div>
+        {% endif %}
     </div>
 </main>
 
 <!-- Footer -->
 {% include footer.html %}
-<script src="{{ 'assets/bootstrap.min.js' | relative_url }}"></script>
+
+<script src="{{ 'assets/js/bootstrap.min.js' | relative_url }}"></script>
 </body>
 </html>

@@ -18,16 +18,20 @@ comment: Infotorg Services APIs layout
                 id="heading-{{ forloop.index }}"
                 class="accordion-header"
             >
+                {% assign icon_exists = false %}
                 {% assign icons_dir = "assets/images/icons/services/" %}
                 {% assign icon_path = icons_dir | prepend: '/' | append: item.icon %}
 
-                {% for static_file in site.static_files %}
-                    {% if static_file.path == icon_path %}
-                        {% assign icon_exists = true %}
+                {% if item.icon and item.icon != '' %}
+                    {% for static_file in site.static_files %}
+                        {% if static_file.path == icon_path %}
+                            {% assign icon_exists = true %}
 
-                        {% break %}
-                    {% endif %}
-                {% endfor %}
+                            {% break %}
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+
 
                 <button
                     id="collapse-item-toggler-{{ forloop.index }}"
@@ -39,8 +43,10 @@ comment: Infotorg Services APIs layout
                     aria-controls="collapse-{{ forloop.index }}"
                 >
                 <span class="service-icon">
-                    {% if icon_exists == true %}
+                    {% if icon_exists %}
                         <img src="{{ icons_dir }}{{ item.icon }}">
+                    {% else %}
+                        <img src="{{ icons_dir }}placeholder.svg">
                     {% endif %}
                 </span>
 
