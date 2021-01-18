@@ -8,6 +8,7 @@
         <a
             href="{{ item.link }}"
             {% if item.target %}target="{{ item.target }}"{% endif %}
+            {% if item.direct_download and item.direct_download == true %}download="{{ item.link | split: '/' | last }}"{% endif %}
             class="btn btn-outline-secondary action-go"
         >
             {{ item.name }}
