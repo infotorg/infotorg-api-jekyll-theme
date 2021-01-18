@@ -28,7 +28,9 @@
     <div class="container layout-{{ page.layout }}">
         {{ content }}
 
+        {% if page.show_cube_bg == true %}
         <div class="bg-cube"></div>
+        {% endif %}
     </div>
 </main>
 

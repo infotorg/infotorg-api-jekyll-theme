@@ -37,9 +37,12 @@
         <div id="swagger-ui"></div>
     </div>
 </main>
+
+{% if page.show_cube_bg == true %}
 <div class="flex-shrink-0 container">
     <div class="bg-cube"></div>
 </div>
+{% endif %}
 
 <!-- Footer -->
 {% include footer.html %}
