@@ -74,12 +74,16 @@
 
         .nav-item {
             & .active {
-                background: #FFF;
+                background: #fff;
                 box-shadow: 0 0 20px 0 rgba(144, 163, 173, 0.3);
             }
 
+            & .active:hover {
+                background: #94b38b;
+            }
+
             a {
-                color: #22272a;
+                color: $color-calm-grey-darkest;
                 font-weight: 500;
             }
         }
