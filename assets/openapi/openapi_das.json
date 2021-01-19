@@ -1,0 +1,67 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Generated API",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://gw.daaas.no/"
+    }
+  ],
+  "paths": {
+    "/api/v1/creditscore/{orgno}/{amount}": {
+      "get": {
+        "parameters": [
+          {
+            "name": "amount",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "orgno",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BasicCreditScoreResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "BasicCreditScoreResponse": {
+        "type": "object",
+        "properties": {
+          "approved": {
+            "type": "boolean"
+          },
+          "eM_EVENTPROBABILITY": {
+            "format": "double",
+            "type": "number"
+          },
+          "juridiskOrgnr": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}
