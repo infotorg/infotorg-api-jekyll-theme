@@ -4,6 +4,12 @@
             <a href="{{ site.product_url | default: 'https://www.infotorg.no/' }}">
                 {{ site.product_url_title | default: 'Infotorg.no' }}
             </a>
+
+            {% if page.layout != 'services' and site.main_page_url and site.main_page_url != '' %}
+            <a href="{{ site.main_page_url | default: '..' }}" class="ms-3">
+                {{ site.main_page_url_title | default: 'Infotorg APIs' }}
+            </a>
+            {% endif %}
         </div>
         <div class="company">
             <span class="service-from-text">En tjeneste fra</span>

@@ -254,7 +254,7 @@ lang: "en-US"
 title: infotorg API
 ```
 
-![Site title](docs/screenshots/site.title.png)
+![Site title screenshot](docs/screenshots/site.title.png)
 
 It used as a part of title in a `<title>` tag as well.
 Let's imagine we have a "Security" page that looks like:
@@ -296,7 +296,7 @@ The `site.subtitle` sets a visible subtitle under the title on the page.
 subtitle: Onboarding guidelines and documentation
 ```
 
-![Site subtitle](docs/screenshots/site.subtitle.png)
+![Site subtitle screenshot](docs/screenshots/site.subtitle.png)
 
 #### Url to a Product page
 
@@ -314,7 +314,27 @@ product_url: "https://www.infotorg.no/"
 product_url_title: "Infotorg.no"
 ```
 
-![Site subtitle](docs/screenshots/site.product_url.png)
+![Site subtitle screenshot](docs/screenshots/site.product_url.png)
+
+#### Url to main page
+
+> Will be shown only on a concrete API documentation page.
+
+`main_page_url` used to set **url** to the main APIs page (a list of services, also called a lending page). *Default:* https://infotorg.github.io/
+
+`_config.yml`:
+```yaml
+main_page_url: "https://infotorg.github.io/"
+```
+
+`main_page_url_title` used to set a **title** to APIs page link. *Default:* Infotorg APIs
+
+`_config.yml`:
+```yaml
+main_page_url_title: "Infotorg APIs"
+```
+
+![Url to Infotorg APIs main page screenshot](docs/screenshots/site.main_page_url.png)
 
 
 #### Enabling Google Analytics
@@ -326,7 +346,7 @@ google_analytics_tag_manager: GTM-XXXX
 
 ### Navigation
 
-![Site navigation](docs/screenshots/navigation.png)
+![Site navigation screenshot](docs/screenshots/navigation.png)
 
 Customize a site navigational links through a Jekyll data file [_data/navigation.yml](_data/navigation.yml)
 
@@ -428,25 +448,25 @@ Each of the layouts injects all needed CSS and JavaScript to render your page co
 
 [`default.html`](_layouts/default.html) is a flexible HTML layout for the site's landing-page / home-page / index-page. <br/>
 
-![Default layout](docs/screenshots/default-layout-with-dummy-content.png)
+![Default layout screenshot](docs/screenshots/default-layout-with-dummy-content.png)
 
 #### Documentation Layout
 
 [documentation.html](_layouts/documentation.html) based on the default layout to show a list of links to external documentation defined in the [_data/documentation_links.yml](_data/documentation_links.yml) file.
 
-![Documentation layout](docs/screenshots/documentation-layout.png)
+![Documentation layout screenshot](docs/screenshots/documentation-layout.png)
 
 #### Services Layout
 
 [services.html](_layouts/services.html) based on the default layout to show a list of services defined in the [_data/services.yml](_data/services.yml) file.
 
-![Services layout](docs/screenshots/services-layout.png)
+![Services layout screenshot](docs/screenshots/services-layout.png)
 
 #### Swagger UI Layout
 
 [services.html](_layouts/services.html) is a flexible HTML layout for the to show Swagger UI.
 
-![Swagger-UI layout](docs/screenshots/swagger-ui-layout.png)
+![Swagger-UI layout screenshot](docs/screenshots/swagger-ui-layout.png)
 
 Path to Open API file can be set in the `openapi` option in the [_config.yml](_config.yml) or via FrontMatter: `openapi: /assets/openapi/YOUR_OPEN_API_FILE`
 

@@ -39,6 +39,13 @@ product_url: ''
 # Sets the product link title. Default: Infotorg.no
 product_url_title: ''
 
+# Sets an url to the main APIs page (a list of services, also called a lending page).
+# Should be shown only on a concrete API documentation page
+main_page_url: 'https://infotorg.github.io/'
+# Sets an title to APIs page link. Default: Infotorg APIs
+main_page_url_title: 'Infotorg APIs'
+
+
 # Your Google Analytics GTM-XXXX code
 google_analytics_tag_manager: ''
 
