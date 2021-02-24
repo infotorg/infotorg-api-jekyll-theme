@@ -14,6 +14,7 @@ h1, .h1 {
   font-weight: normal;
 }
 
+// --- Default layout typography styles ---
 main .layout-default {
   & h1:first-child {
     font-size: 1.75rem;
@@ -21,12 +22,12 @@ main .layout-default {
   }
 
   h2 {
-    @extend .mt-6;
+    margin-top: 2rem;
   }
 
   h3 {
     color: $color-calm-grey-darkest;
-    @extend .mt-5;
+    margin-top: 2rem;
   }
 
   @include media-breakpoint-up(lg) {
