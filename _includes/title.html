@@ -1,4 +1,7 @@
 <div class="header-info">
     <h1>{{ site.title }}</h1>
+    {% if site.subtitletest and site.subtitletest != '' %} 
+        <h2>{{ site.subtitletest }}</h2>
+    {% endif %}
     <p>{{ site.subtitle }}</p>
 </div>

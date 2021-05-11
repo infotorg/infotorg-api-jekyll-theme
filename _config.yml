@@ -31,6 +31,10 @@ lang: "en-US"
 # For a "Security" page will looks: <title>Security | infotorg API</title>
 title: infotorg API
 
+# Subtitle
+##
+subtitletest: ''
+
 # Sets a visible subtitle under the title on the page
 subtitle: Onboarding guidelines and documentation
 
