@@ -252,3 +252,19 @@
 .action-go:hover:after {
     background-image: url(../images/icons/action-go-outline.svg);
 }
+.code-example {
+    background: #f4f4f4;
+    border: 1px solid #ddd;
+    border-left: 3px solid #008487;
+    color: #696969;
+    page-break-inside: avoid;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 0.5em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1em 1.5em;
+    display: block;
+    word-wrap: break-word;
+}
