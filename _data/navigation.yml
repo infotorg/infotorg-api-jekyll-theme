@@ -26,6 +26,14 @@
   link: /onboarding
   show: true
 
+- name: REST
+  link: /rest/v12.7/swagger
+  show: true
+
+- name: SOAP
+  link: /soap/v4.8/documentation
+  show: true
+
 - name: FAQ
   link: https://faq.socialboards.com/infotorg/
   target: _blank

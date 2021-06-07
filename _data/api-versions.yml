@@ -1,0 +1,27 @@
+soap:
+  pages:
+    - Documentation
+    - Security
+    - Onboarding
+  versions:
+    - version: v4.8
+      link: /v4.8
+      show: true
+
+    - version: v4.7
+      link: /v4.7
+      show: false
+
+rest:
+  pages:
+    - Swagger
+    - Security
+    - Onboarding
+  versions:
+    - version: v12.7
+      link: /v12.7
+      show: true
+
+    - version: v12.6
+      link: /v12.6
+      show: false

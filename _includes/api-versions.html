@@ -1,0 +1,31 @@
+{% assign versions = include.data[include.api-type].versions %}
+{% assign pages = include.data[include.api-type].pages %}
+{% assign active-page = include.active-page %}
+
+<section class="api-versions">
+    <div class="container-lg">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+                <p class="api-versions__title">API versions</p>
+            </div>
+            <div class="col-auto">
+                <select class="form-select">
+                    {% for item in versions %}
+                        <option value="{{ item.version }}">{{ item.version }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-auto">
+                <ul class="api-versions__list">
+                    {% for page in pages %}
+                        <li class="api-versions__item">
+                            <a href="#" class="api-versions__link {% if active-page == page %}active{% endif %}">
+                                {{ page }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

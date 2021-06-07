@@ -1,42 +1,49 @@
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang | default: "en-US" }}" class="h-100">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="h-100">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    {% seo %}
+        {% seo %}
 
-    {% include head-fonts.html %}
-    {% include head-app-css.html %}
-    {% include head-favicon.html %}
-    {% include head-google-analytics.html %}
-</head>
-<body class="d-flex flex-column h-100">
-<!-- Navigation -->
-{% include navigation.html %}
+        {% include head-fonts.html %}
+        {% include head-app-css.html %}
+        {% include head-favicon.html %}
+        {% include head-google-analytics.html %}
+    </head>
+    <body class="d-flex flex-column h-100">
+        <!-- Navigation -->
+        {% include navigation.html %}
 
-<section class="hero-section d-block d-lg-none">
-    <div class="container-fluid">
-        {% include title.html %}
-    </div>
-</section>
-
-<!-- Main content -->
-<main class="flex-shrink-0 mt-3">
-    <div class="container layout-{{ page.layout }}">
-        {{ content }}
-
-        {% if page.show_cube_bg == true %}
-        <div class="bg-cube"></div>
+        <!-- API versions menu -->
+        {% if page.show-api-versions == true %}
+            {% include api-versions.html data=site.data.api-versions api-type=page.api-type active-page=page.active-page %}
         {% endif %}
-    </div>
-</main>
 
-<!-- Footer -->
-{% include footer.html %}
+        <!-- Title page -->
+        <section class="hero-section d-block d-lg-none">
+            <div class="container-fluid">
+                {% include title.html %}
+            </div>
+        </section>
 
-<script src="{{ 'assets/js/bootstrap.min.js' | relative_url }}"></script>
-</body>
+        <!-- Main content -->
+        <main class="flex-shrink-0 mt-3">
+            <div class="container layout-{{ page.layout }}">
+                {{ content }}
+
+                {% if page.show_cube_bg == true %}
+                <div class="bg-cube"></div>
+                {% endif %}
+            </div>
+        </main>
+
+        <!-- Footer -->
+        {% include footer.html %}
+
+        <!-- Scripts -->
+        <script src="{{ 'assets/js/bootstrap.min.js' | relative_url }}"></script>
+    </body>
 </html>
