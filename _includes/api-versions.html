@@ -1,4 +1,4 @@
-{% assign versions = include.data[include.api-type].versions %}
+{% assign versions = include.data[include.api-type].versions | where:'show', true %}
 {% assign pages = include.data[include.api-type].pages %}
 {% assign active-page = include.active-page %}
 
@@ -11,7 +11,7 @@
             <div class="col-auto">
                 <select class="form-select">
                     {% for item in versions %}
-                        <option value="{{ item.version }}">{{ item.version }}</option>
+                        <option value="{{ item.link }}">{{ item.version }}</option>
                     {% endfor %}
                 </select>
             </div>

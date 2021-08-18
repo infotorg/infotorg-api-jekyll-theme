@@ -2,6 +2,14 @@
   link: /services
   show: true
 
+- name: REST
+  link: /rest/v12.7/swagger
+  show: true
+
+- name: SOAP
+  link: /soap/v4.8/documentation
+  show: true
+
 - name: Overview
   link: /
   show: true
@@ -24,14 +32,6 @@
 
 - name: Onboarding
   link: /onboarding
-  show: true
-
-- name: REST
-  link: /rest/v12.7/swagger
-  show: true
-
-- name: SOAP
-  link: /soap/v4.8/documentation
   show: true
 
 - name: FAQ
