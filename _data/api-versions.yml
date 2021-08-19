@@ -5,11 +5,15 @@ soap:
     - Onboarding
   versions:
     - version: v4.8 (latest)
-      link: /v4.8
+      link: v4.8
       show: true
 
     - version: v4.7
-      link: /v4.7
+      link: v4.7
+      show: true
+
+    - version: v4.6
+      link: v4.6
       show: false
 
 rest:
@@ -19,9 +23,13 @@ rest:
     - Onboarding
   versions:
     - version: v12.7 (latest)
-      link: /v12.7
+      link: v12.7
       show: true
 
     - version: v12.6
-      link: /v12.6
+      link: v12.6
+      show: true
+
+    - version: v12.5
+      link: v12.5
       show: false

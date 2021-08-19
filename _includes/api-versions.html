@@ -1,5 +1,5 @@
-{% assign versions = include.data[include.api-type].versions | where:'show', true %}
 {% assign pages = include.data[include.api-type].pages %}
+{% assign versions = include.data[include.api-type].versions | where:'show', true %}
 {% assign active-page = include.active-page %}
 
 <section class="api-versions">
@@ -9,17 +9,17 @@
                 <p class="api-versions__title">API versions</p>
             </div>
             <div class="col-auto">
-                <select class="form-select">
+                <select class="form-select" id="versions">
                     {% for item in versions %}
                         <option value="{{ item.link }}">{{ item.version }}</option>
                     {% endfor %}
                 </select>
             </div>
             <div class="col-auto">
-                <ul class="api-versions__list">
+                <ul class="api-versions__list" id="pages">
                     {% for page in pages %}
                         <li class="api-versions__item">
-                            <a href="#" class="api-versions__link {% if active-page == page %}active{% endif %}">
+                            <a href="" class="api-versions__link {% if active-page == page %}active{% endif %}">
                                 {{ page }}
                             </a>
                         </li>
@@ -29,3 +29,54 @@
         </div>
     </div>
 </section>
+
+<script>
+    const redirectToUrl = (type, version, currentPage) => {
+        window.location.assign(`/${type}/${version}/${currentPage}`);
+    }
+
+    const setActiveNavTab = (type, version, apiCurrentPage) => {
+        const activeNavTab = Array
+            .from(document.getElementById('navbarNav').getElementsByTagName('a'))
+            .find(el => el.innerText.trim().toLowerCase() === type);
+
+        activeNavTab.classList.add('active');
+        activeNavTab.href = `/${type}/${version}/${apiCurrentPage}`;
+    }
+
+    const setVersionsDropdown = (version) => {
+        document.getElementById('versions').value = version;
+    }
+
+    const setPageLinks = (type, version) => {
+        const pagesList = Array.from(document.getElementById('pages').getElementsByTagName('a'));
+
+        pagesList.forEach((page) => {
+            page.href = `/${type}/${version}/${page.innerText.toLowerCase()}`;
+        })
+    };
+
+    // Handle content on first page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const [ apiType, apiVersion, apiCurrentPage ] = window.location.pathname.split('/').filter(el => el);
+
+        setActiveNavTab(apiType, apiVersion, apiCurrentPage);
+        setVersionsDropdown(apiVersion)
+        setPageLinks(apiType, apiVersion);
+    });
+
+    // Handle content on version change
+    document.getElementById('versions').addEventListener('change', (e) => {
+        e.preventDefault();
+
+        const newVersion = e.target.value;
+        const [ apiType, apiVersion, apiCurrentPage ] = window.location.pathname.split('/').filter(el => el);
+
+        if (apiVersion !== newVersion) {
+            redirectToUrl(apiType, newVersion, apiCurrentPage);
+            setActiveNavTab(apiType, newVersion, apiCurrentPage);
+            setPageLinks(apiType, newVersion);
+        }
+
+    });
+</script>
