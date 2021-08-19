@@ -24,11 +24,6 @@
 <!-- Navigation -->
 {% include navigation.html class="mb-0" %}
 
-<!-- API versions menu -->
-{% if page.show-api-versions == true %}
-    {% include api-versions.html data=site.data.api-versions api-type=page.api-type active-page=page.active-page %}
-{% endif %}
-
 <section class="hero-section d-block d-lg-none">
     <div class="container-fluid">
         {% include title.html %}

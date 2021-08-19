@@ -1,9 +1,10 @@
 ---
 title: Security
 permalink: /rest/v12.6/security
-show-api-versions: true
+show-sub-navigation: true
 api-type: rest
-active-page: Security
+api-page-title: security
+api-version: v12.6
 ---
 
 Security UI

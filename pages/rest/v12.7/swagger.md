@@ -2,9 +2,10 @@
 layout: default
 title: Swagger UI
 permalink: /rest/v12.7/swagger
-show-api-versions: true
+show-sub-navigation: true
 api-type: rest
-active-page: Swagger
+api-page-title: swagger
+api-version: v12.7
 ---
 
 Swagger UI

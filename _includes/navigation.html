@@ -40,6 +40,7 @@
               *  Items will contain only visible elements
             {% endcomment %}
             {% assign items = site.data.navigation | where:'show', true %}
+            {% assign sub_items = site.data.sub-navigation %}
 
             <ul class="navbar-nav ml-auto">
                 {% for item in items %}
@@ -56,8 +57,25 @@
                             class="nav-link{% if page.url == item.link %} active{% endif %}"
                             {% if item.target %}target="{{ item.target }}"{% endif %}
                         >
-                            {{ item.name }}
+                            {{ item.name | capitalize }}
                         </a>
+                            {% if item.sub-navigation == true %}
+                                {% assign api-versions = sub_items[item.name].versions | where:'show', true %}
+                                <ul>
+                                    {% for api in api-versions %}
+                                    <li>
+                                        <span>{{ api.version }}</span>
+                                        <ul>
+                                            {% for page in api.pages %}
+                                            <li>
+                                                <a href="/{{ item.name }}/{{ api.link }}/{{ page.title }}">{{ page.title | capitalize }}</a>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
                     </li>
                 {% endfor %}
             </ul>

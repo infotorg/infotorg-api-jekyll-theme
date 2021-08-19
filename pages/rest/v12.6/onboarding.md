@@ -1,9 +1,10 @@
 ---
 title: Onboarding
 permalink: /rest/v12.6/onboarding
-show-api-versions: true
+show-sub-navigation: true
 api-type: rest
-active-page: Onboarding
+api-page-title: onboarding
+api-version: v12.6
 ---
 
 Onboarding UI

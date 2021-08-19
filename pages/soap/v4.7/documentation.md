@@ -2,9 +2,10 @@
 layout: default
 title: Documentation
 permalink: /soap/v4.7/documentation
-show-api-versions: true
+show-sub-navigation: true
 api-type: soap
-active-page: Documentation
+api-page-title: documentation
+api-version: v4.7
 ---
 
 Documentation

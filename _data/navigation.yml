@@ -6,25 +6,27 @@
   link: /
   show: true
 
-- name: REST
+- name: rest
   link: /rest/v12.7/swagger
   show: true
+  sub-navigation: true
 
-- name: SOAP
+- name: soap
   link: /soap/v4.8/documentation
   show: true
+  sub-navigation: true
 
 - name: Documentation
   link: /documentation
-  show: true
+  show: false
 
 - name: Security
   link: /security
-  show: true
+  show: false
 
 - name: SwaggerUI
   link: /swagger
-  show: true
+  show: false
 
 - name: Field description
   link: /field-descriptions
@@ -32,7 +34,7 @@
 
 - name: Onboarding
   link: /onboarding
-  show: true
+  show: false
 
 - name: FAQ
   link: https://faq.socialboards.com/infotorg/

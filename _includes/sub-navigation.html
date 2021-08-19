@@ -1,0 +1,39 @@
+{% assign api-type = include.api-type %}
+{% assign api-version = include.api-version %}
+{% assign api-page-title = include.api-page-title %}
+{% assign available-api-versions = include.data[api-type].versions | where:'show', true %}
+
+<section class="sub-navigation">
+    <div class="container-lg">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-auto">
+                <p class="sub-navigation__title">API versions</p>
+            </div>
+            <div class="col-auto">
+                <select class="form-select" id="versions">
+                    {% for api in available-api-versions %}
+                        <option
+                            value="{{ api.link }}"
+                            {% if api-version == api.link %}selected{% endif %}
+                        >
+                            {{ api.version }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-auto">
+                {% for api in available-api-versions %}
+                    <ul class="sub-navigation__list {% if api.link == api-version %}active{% endif %}" id="pages">
+                        {% for page in api.pages %}
+                            <li class="sub-navigation__item">
+                                <a href="/{{ api-type }}/{{ api.link }}/{{ page.title }}" class="sub-navigation__link {% if page.title == api-page-title %}active{% endif %}">
+                                    {{ page.title | capitalize }}
+                                </a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

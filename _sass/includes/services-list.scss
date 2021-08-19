@@ -1,0 +1,68 @@
+.services-list {
+    .service-icon {
+        width: 32px;
+        margin-right: 16px;
+    }
+
+    .accordion-button {
+        font-family: $font-text;
+        font-size: 1.125rem;
+        font-weight: bold;
+    }
+
+    .accordion-button:focus {
+        border-top: 1px solid rgba(0, 0, 0, 0.125);
+        box-shadow: none;
+    }
+
+    .accordion-button::after {
+        background-image: url("../../assets/images/icons/info.svg");
+        background-size: auto;
+        width: 24px;
+        height: 25px;
+    }
+
+    .accordion-button:not(.collapsed)::after {
+        background-image: none;
+        transform: none;
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: inherit;
+        border-bottom: none;
+        text-decoration: underline;
+        color: $color-clear-blue;
+    }
+
+    .accordion-button:hover {
+        background-color: $color-nice-grey;
+    }
+
+    .service-item:last-child .accordion-button.collapsed {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    }
+
+    .accordion-body {
+        padding-top: 1.875rem;
+    }
+
+    .btn-hide-details {
+        color: $color-clear-blue;
+        text-decoration: none;
+        margin-right: -0.8rem;
+        font-size: 0.875rem;
+    }
+
+    .btn-hide-details:hover {
+        background-color: $color-nice-grey;
+    }
+
+    .btn-hide-details:after {
+        content: "";
+        width: 24px;
+        height: 25px;
+        background-image: url('../../assets/images/icons/collapse.svg');
+        background-repeat: no-repeat;
+        margin-left: 4px;
+    }
+}
