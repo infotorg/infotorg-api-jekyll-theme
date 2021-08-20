@@ -1,78 +1,150 @@
 soap:
   versions:
-    - version: v4.8 (latest)
+    v4.8:
+      title: v4.8 (latest)
       link: v4.8
       show: true
       pages:
-        - title: documentation
+        documentation:
+          title: documentation
           active: true
+          links:
+            - name: WSDL
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl#v4.8
+              direct_download: true
+              show: true
 
-        - title: security
+            - name: XSD
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd#v4.8
+              direct_download: true
+              show: true
+
+            - name: Documentation
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd.xhtml#v4.8
+              target: _blank
+              show: true
+
+        security:
+          title: security
           active: false
 
-        - title: onboarding
+        onboarding:
+          title: onboarding
           active: false
 
-    - version: v4.7
+    v4.7:
+      title: v4.7
       link: v4.7
       show: true
       pages:
-        - title: documentation
+        documentation:
+          title: documentation
           active: true
+          links:
+            - name: WSDL
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl#v4.7
+              direct_download: true
+              show: true
 
-        - title: security
+            - name: XSD
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd#v4.7
+              direct_download: true
+              show: true
+
+            - name: Documentation
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd.xhtml#v4.7
+              target: _blank
+              show: true
+
+        security:
+          title: security
           active: false
 
-    - version: v4.6
+        onboarding:
+          title: onboarding
+          active: false
+
+    v4.6:
+      title: v4.6
       link: v4.6
       show: false
       pages:
-        - title: documentation
+        documentation:
+          title: documentation
           active: true
+          links:
+            - name: WSDL
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl#v4.6
+              direct_download: true
+              show: true
 
-        - title: security
+            - name: XSD
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd#v4.6
+              direct_download: true
+              show: true
+
+            - name: Documentation
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd.xhtml#v4.6
+              target: _blank
+              show: true
+
+        security:
+          title: security
           active: false
 
-        - title: onboarding
+        onboarding:
+          title: onboarding
           active: false
 
 rest:
   versions:
-    - version: v12.7 (latest)
+    v12.7:
+      title: v12.7 (latest)
       link: v12.7
       show: true
       pages:
-        - title: swagger
+        swagger:
+          title: swagger
           active: true
 
-        - title: security
+        security:
+          title: security
           active: false
 
-        - title: onboarding
+        onboarding:
+          title: onboarding
           active: false
 
-    - version: v12.6
+    v12.6:
+      title: v12.6
       link: v12.6
       show: true
       pages:
-        - title: swagger
+        swagger:
+          title: swagger
           active: true
 
-        - title: security
+        security:
+          title: security
           active: false
 
-        - title: onboarding
+        onboarding:
+          title: onboarding
           active: false
 
-    - version: v12.5
+    v12.5:
+      title: v12.5
       link: v12.5
       show: false
       pages:
-        - title: swagger
+        swagger:
+          title: swagger
           active: true
 
-        - title: security
+        security:
+          title: security
           active: false
 
-        - title: onboarding
+        onboarding:
+          title: onboarding
           active: false

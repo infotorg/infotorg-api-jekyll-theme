@@ -2,11 +2,12 @@
 title: Onboarding
 permalink: /rest/v12.6/onboarding
 show-sub-navigation: true
-api-type: rest
+api-page-type: rest
 api-page-title: onboarding
-api-version: v12.6
+api-page-version: v12.6
 ---
 
-Onboarding UI
+# {{ page.title }} - API {{ page.api-page-version }} version
 
-test content for v12.6 version
+## The page is under construction.
+To change or remove this content, see `/{{ page.path }}`.

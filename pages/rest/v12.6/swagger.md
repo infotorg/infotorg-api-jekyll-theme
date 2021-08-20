@@ -1,13 +1,14 @@
 ---
-layout: default
+layout: swagger-ui
 title: Swagger UI
 permalink: /rest/v12.6/swagger
 show-sub-navigation: true
-api-type: rest
+api-page-type: rest
 api-page-title: swagger
-api-version: v12.6
+api-page-version: v12.6
 ---
 
-Swagger UI
+# {{ page.title }} - API {{ page.api-page-version }} version
 
-test content for v12.6 version
+## The page is under construction.
+To change or remove this content, see `/{{ page.path }}`.

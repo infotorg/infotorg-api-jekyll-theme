@@ -6,15 +6,17 @@
   link: /
   show: true
 
-- name: rest
+- name: REST
   link: /rest/v12.7/swagger
   show: true
   sub-navigation: true
+  type: rest
 
-- name: soap
+- name: SOAP
   link: /soap/v4.8/documentation
   show: true
   sub-navigation: true
+  type: soap
 
 - name: Documentation
   link: /documentation

@@ -2,11 +2,12 @@
 title: Security
 permalink: /soap/v4.7/security
 show-sub-navigation: true
-api-type: soap
+api-page-type: soap
 api-page-title: security
-api-version: v4.7
+api-page-version: v4.7
 ---
 
-Security UI
+# {{ page.title }} - API {{ page.api-page-version }} version
 
-test content for v4.7 version
+## The page is under construction.
+To change or remove this content, see `/{{ page.path }}`.

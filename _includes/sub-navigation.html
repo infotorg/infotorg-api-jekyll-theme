@@ -1,9 +1,9 @@
-{% assign api-type = include.api-type %}
-{% assign api-version = include.api-version %}
+{% assign api-page-type = include.api-page-type %}
+{% assign api-page-version = include.api-page-version %}
 {% assign api-page-title = include.api-page-title %}
-{% assign available-api-versions = include.data[api-type].versions | where:'show', true %}
+{% assign available-api-versions = include.data[api-page-type].versions | where:'show', true %}
 
-<section class="sub-navigation">
+<section class="sub-navigation {{ include.class }}">
     <div class="container-lg">
         <div class="row justify-content-center align-items-center">
             <div class="col-auto">
@@ -11,23 +11,23 @@
             </div>
             <div class="col-auto">
                 <select class="form-select" id="versions">
-                    {% for api in available-api-versions %}
+                    {% for version in available-api-versions %}
                         <option
-                            value="{{ api.link }}"
-                            {% if api-version == api.link %}selected{% endif %}
+                            value="{{ version.link }}"
+                            {% if api-page-version == version.link %}selected{% endif %}
                         >
-                            {{ api.version }}
+                            {{ version.title }}
                         </option>
                     {% endfor %}
                 </select>
             </div>
             <div class="col-auto">
-                {% for api in available-api-versions %}
-                    <ul class="sub-navigation__list {% if api.link == api-version %}active{% endif %}" id="pages">
-                        {% for page in api.pages %}
+                {% for version in available-api-versions %}
+                    <ul class="sub-navigation__list {% if version.link == api-page-version %}active{% endif %}" id="pages">
+                        {% for page in version.pages %}
                             <li class="sub-navigation__item">
-                                <a href="/{{ api-type }}/{{ api.link }}/{{ page.title }}" class="sub-navigation__link {% if page.title == api-page-title %}active{% endif %}">
-                                    {{ page.title | capitalize }}
+                                <a href="/{{ api-page-type }}/{{ version.link }}/{{ page[1].title }}" class="sub-navigation__link {% if page[1].title == api-page-title %}active{% endif %}">
+                                    {{ page[1].title | capitalize }}
                                 </a>
                             </li>
                         {% endfor %}

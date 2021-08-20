@@ -2,11 +2,12 @@
 title: Security
 permalink: /rest/v12.6/security
 show-sub-navigation: true
-api-type: rest
+api-page-type: rest
 api-page-title: security
-api-version: v12.6
+api-page-version: v12.6
 ---
 
-Security UI
+# {{ page.title }} - API {{ page.api-page-version }} version
 
-test content for v12.6 version
+## The page is under construction.
+To change or remove this content, see `/{{ page.path }}`.

@@ -2,11 +2,12 @@
 title: Onboarding
 permalink: /soap/v4.7/onboarding
 show-sub-navigation: true
-api-type: soap
+api-page-type: soap
 api-page-title: onboarding
-api-version: v4.7
+api-page-version: v4.7
 ---
 
-Onboarding UI
+# {{ page.title }} - API {{ page.api-page-version }} version
 
-test content for v4.7 version
+## The page is under construction.
+To change or remove this content, see `/{{ page.path }}`.

@@ -1,3 +1,6 @@
+{% assign page-title = page.api-page-title %}
+{% assign page-version = page.api-page-version %}
+
 <nav class="navbar navbar-expand-lg navbar-light flex-shrink-0 {{ include.class }}">
     <div class="container-lg">
         <a
@@ -57,18 +60,24 @@
                             class="nav-link{% if page.url == item.link %} active{% endif %}"
                             {% if item.target %}target="{{ item.target }}"{% endif %}
                         >
-                            {{ item.name | capitalize }}
+                            {{ item.name }}
                         </a>
+                        <!-- Sub navigation for mobile view -->
                             {% if item.sub-navigation == true %}
-                                {% assign api-versions = sub_items[item.name].versions | where:'show', true %}
+                                {% assign api-versions = sub_items[item.type].versions | where:'show', true %}
                                 <ul>
                                     {% for api in api-versions %}
                                     <li>
-                                        <span>{{ api.version }}</span>
+                                        <span>{{ api.title }}</span>
                                         <ul>
                                             {% for page in api.pages %}
                                             <li>
-                                                <a href="/{{ item.name }}/{{ api.link }}/{{ page.title }}">{{ page.title | capitalize }}</a>
+                                                <a
+                                                    href="/{{ item.type }}/{{ api.link }}/{{ page.title }}"
+                                                    class="{% if page-title == page[1].title and page-version == api.link %}active{% endif %}"
+                                                >
+                                                    {{ page[1].title | capitalize }}
+                                                </a>
                                             </li>
                                             {% endfor %}
                                         </ul>
