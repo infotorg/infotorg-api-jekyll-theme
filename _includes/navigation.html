@@ -72,7 +72,7 @@
                                             {% for page in version.pages %}
                                             <li>
                                                 <a
-                                                    href="/{{ item.type }}/{{ version.link }}/{{ page.title }}"
+                                                    href="/{{ item.type }}/{{ version.link }}/{{ page[1].title }}"
                                                     class="{% if page-title == page[1].title and api-page-version == version.link %}active{% endif %}"
                                                 >
                                                     {{ page[1].title | capitalize }}
