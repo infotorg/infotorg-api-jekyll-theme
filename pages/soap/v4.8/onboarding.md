@@ -2,7 +2,7 @@
 title: Onboarding
 permalink: /soap/v4.8/onboarding
 show-sub-navigation: true
-api-page-type: soap
+page-type: soap
 api-page-title: onboarding
 api-page-version: v4.8
 ---

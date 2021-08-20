@@ -3,7 +3,7 @@ layout: swagger-ui
 title: Swagger UI
 permalink: /rest/v12.7/swagger
 show-sub-navigation: true
-api-page-type: rest
+page-type: rest
 api-page-title: swagger
 api-page-version: v12.7
 ---

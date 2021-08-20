@@ -1,7 +1,7 @@
-{% assign api-page-type = include.api-page-type %}
-{% assign api-page-version = include.api-page-version %}
+{% assign page-type = include.page-type %}
 {% assign api-page-title = include.api-page-title %}
-{% assign available-api-versions = include.data[api-page-type].versions | where:'show', true %}
+{% assign api-page-version = include.api-page-version %}
+{% assign available-api-versions = include.data[page-type].versions | where:'show', true %}
 
 <section class="sub-navigation {{ include.class }}">
     <div class="container-lg">
@@ -26,7 +26,7 @@
                     <ul class="sub-navigation__list {% if version.link == api-page-version %}active{% endif %}" id="pages">
                         {% for page in version.pages %}
                             <li class="sub-navigation__item">
-                                <a href="/{{ api-page-type }}/{{ version.link }}/{{ page[1].title }}" class="sub-navigation__link {% if page[1].title == api-page-title %}active{% endif %}">
+                                <a href="/{{ page-type }}/{{ version.link }}/{{ page[1].title }}" class="sub-navigation__link {% if page[1].title == api-page-title %}active{% endif %}">
                                     {{ page[1].title | capitalize }}
                                 </a>
                             </li>

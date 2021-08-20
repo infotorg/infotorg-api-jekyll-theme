@@ -2,7 +2,7 @@
 title: Security
 permalink: /rest/v12.6/security
 show-sub-navigation: true
-api-page-type: rest
+page-type: rest
 api-page-title: security
 api-page-version: v12.6
 ---

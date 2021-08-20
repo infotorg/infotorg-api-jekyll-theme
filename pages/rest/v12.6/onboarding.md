@@ -2,7 +2,7 @@
 title: Onboarding
 permalink: /rest/v12.6/onboarding
 show-sub-navigation: true
-api-page-type: rest
+page-type: rest
 api-page-title: onboarding
 api-page-version: v12.6
 ---

@@ -2,7 +2,7 @@
 title: Security
 permalink: /soap/v4.7/security
 show-sub-navigation: true
-api-page-type: soap
+page-type: soap
 api-page-title: security
 api-page-version: v4.7
 ---

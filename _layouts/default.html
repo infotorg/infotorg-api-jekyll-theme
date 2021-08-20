@@ -19,7 +19,7 @@
 
     <!-- Sub-navigation -->
     {% if page.show-sub-navigation == true %}
-        {% include sub-navigation.html data=site.data.sub-navigation api-page-type=page.api-page-type api-page-title=page.api-page-title api-page-version=page.api-page-version %}
+        {% include sub-navigation.html data=site.data.sub-navigation page-type=page.page-type api-page-title=page.api-page-title api-page-version=page.api-page-version %}
     {% endif %}
 
     <!-- Title page -->

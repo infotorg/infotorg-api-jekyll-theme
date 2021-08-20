@@ -1,8 +1,8 @@
 ---
 title: Security
 permalink: /soap/v4.8/security
-show-sub-navigation: true
-api-page-type: soap
+show-sub-navigation: true 
+page-type: soap
 api-page-title: security
 api-page-version: v4.8
 ---

@@ -3,7 +3,7 @@ layout: default
 ---
 <h1>{{ page.title }}</h1>
 
-{% assign documentation-links = site.data.sub-navigation[page.api-page-type].versions[page.api-page-version].pages[page.api-page-title].links %}
+{% assign documentation-links = site.data.sub-navigation[page.page-type].versions[page.api-page-version].pages[page.api-page-title].links %}
 {% include documentation_links.html links=documentation-links %}
 
 {{ content }}

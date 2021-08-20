@@ -1,6 +1,3 @@
-{% assign page-title = page.api-page-title %}
-{% assign page-version = page.api-page-version %}
-
 <nav class="navbar navbar-expand-lg navbar-light flex-shrink-0 {{ include.class }}">
     <div class="container-lg">
         <a
@@ -64,17 +61,19 @@
                         </a>
                         <!-- Sub navigation for mobile view -->
                             {% if item.sub-navigation == true %}
-                                {% assign api-versions = sub_items[item.type].versions | where:'show', true %}
+                                {% assign page-title = page.api-page-title %}
+                                {% assign api-page-version = page.api-page-version %}
+                                {% assign versions = sub_items[item.type].versions | where:'show', true %}
                                 <ul>
-                                    {% for api in api-versions %}
+                                    {% for version in versions %}
                                     <li>
-                                        <span>{{ api.title }}</span>
+                                        <span>{{ version.title }}</span>
                                         <ul>
-                                            {% for page in api.pages %}
+                                            {% for page in version.pages %}
                                             <li>
                                                 <a
-                                                    href="/{{ item.type }}/{{ api.link }}/{{ page.title }}"
-                                                    class="{% if page-title == page[1].title and page-version == api.link %}active{% endif %}"
+                                                    href="/{{ item.type }}/{{ version.link }}/{{ page.title }}"
+                                                    class="{% if page-title == page[1].title and api-page-version == version.link %}active{% endif %}"
                                                 >
                                                     {{ page[1].title | capitalize }}
                                                 </a>
