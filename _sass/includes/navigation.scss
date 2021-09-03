@@ -1,0 +1,82 @@
+.navbar-brand {
+    span {
+        color: #a5130c;
+    }
+}
+
+.navbar-nav .nav-link {
+    font-family: $font-heading;
+}
+
+.navbar-nav .nav-item  {
+    a, span {
+        color: rgba(0,0,0,0.55);
+    }
+
+    a.active {
+        color: $color-nordic-teal;
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    #navbarNav {
+        margin-left: -12px;
+        white-space: nowrap;
+    }
+
+    .navbar {
+        padding-top: 38px;
+        padding-bottom: 0;
+        margin-bottom: 2rem;
+        background-color: #dfe3e6;
+        background-image: url('../../assets/images/it-gears.svg');
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: 40%;
+
+        .nav-item {
+            & .active {
+                background: #fff;
+                box-shadow: 0 0 20px 0 rgba(144, 163, 173, 0.3);
+            }
+
+            &:hover {
+                background: #94b38b;
+            }
+
+            a {
+                color: $color-calm-grey-darkest;
+                font-weight: 500;
+            }
+
+            ul {
+                display: none;
+            }
+        }
+
+        .container-fluid {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .navbar-nav {
+            background-color: #b8c7b4;
+
+            .nav-link {
+                font-size: 1rem;
+                padding-right: 1.5rem;
+                padding-left: 1.5rem;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .navbar {
+        .infotorg-developer-logo {
+            margin-left: -165px;
+        }
+    }
+}

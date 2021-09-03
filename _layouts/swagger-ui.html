@@ -24,6 +24,12 @@
 <!-- Navigation -->
 {% include navigation.html class="mb-0" %}
 
+<!-- Sub-navigation -->
+{% if page.show-sub-navigation == true %}
+    {% include sub-navigation.html data=site.data.sub-navigation page-type=page.page-type api-page-title=page.api-page-title api-page-version=page.api-page-version class="mt-2" %}
+{% endif %}
+
+<!-- Hero -->
 <section class="hero-section d-block d-lg-none">
     <div class="container-fluid">
         {% include title.html %}
@@ -48,6 +54,7 @@
 {% include footer.html %}
 
 <script src="{{ 'assets/js/bootstrap.min.js' | relative_url }}"></script>
+<script src="{{ 'assets/js/sub-navigation.js' | relative_url }}"></script>
 <script src="https://unpkg.com/swagger-ui-dist@3.31.1/swagger-ui-standalone-preset.js"></script>
 <script src="https://unpkg.com/swagger-ui-dist@3.31.1/swagger-ui-bundle.js" charset="UTF-8"></script>
 <script>

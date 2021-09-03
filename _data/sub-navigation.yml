@@ -1,0 +1,150 @@
+soap:
+  versions:
+    v4.8:
+      title: v4.8 (latest)
+      link: v4.8
+      show: true
+      pages:
+        documentation:
+          title: documentation
+          active: true
+          links:
+            - name: WSDL
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl#v4.8
+              direct_download: true
+              show: true
+
+            - name: XSD
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd#v4.8
+              direct_download: true
+              show: true
+
+            - name: Documentation
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd.xhtml#v4.8
+              target: _blank
+              show: true
+
+        security:
+          title: security
+          active: false
+
+        onboarding:
+          title: onboarding
+          active: false
+
+    v4.7:
+      title: v4.7
+      link: v4.7
+      show: true
+      pages:
+        documentation:
+          title: documentation
+          active: true
+          links:
+            - name: WSDL
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl#v4.7
+              direct_download: true
+              show: true
+
+            - name: XSD
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd#v4.7
+              direct_download: true
+              show: true
+
+            - name: Documentation
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd.xhtml#v4.7
+              target: _blank
+              show: true
+
+        security:
+          title: security
+          active: false
+
+        onboarding:
+          title: onboarding
+          active: false
+
+    v4.6:
+      title: v4.6
+      link: v4.6
+      show: false
+      pages:
+        documentation:
+          title: documentation
+          active: true
+          links:
+            - name: WSDL
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl#v4.6
+              direct_download: true
+              show: true
+
+            - name: XSD
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd#v4.6
+              direct_download: true
+              show: true
+
+            - name: Documentation
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd.xhtml#v4.6
+              target: _blank
+              show: true
+
+        security:
+          title: security
+          active: false
+
+        onboarding:
+          title: onboarding
+          active: false
+
+rest:
+  versions:
+    v12.7:
+      title: v12.7 (latest)
+      link: v12.7
+      show: true
+      pages:
+        swagger:
+          title: swagger
+          active: true
+
+        security:
+          title: security
+          active: false
+
+        onboarding:
+          title: onboarding
+          active: false
+
+    v12.6:
+      title: v12.6
+      link: v12.6
+      show: true
+      pages:
+        swagger:
+          title: swagger
+          active: true
+
+        security:
+          title: security
+          active: false
+
+        onboarding:
+          title: onboarding
+          active: false
+
+    v12.5:
+      title: v12.5
+      link: v12.5
+      show: false
+      pages:
+        swagger:
+          title: swagger
+          active: true
+
+        security:
+          title: security
+          active: false
+
+        onboarding:
+          title: onboarding
+          active: false

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ page.lang | default: site.lang | default: "en-US" }}" class="h-100">
+<html lang="{{ page.lang | default: site.lang | default: 'en-US' }}" class="h-100">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -14,29 +14,37 @@
     {% include head-google-analytics.html %}
 </head>
 <body class="d-flex flex-column h-100">
-<!-- Navigation -->
-{% include navigation.html %}
+    <!-- Navigation -->
+    {% include navigation.html class="mb-2" %}
 
-<section class="hero-section d-block d-lg-none">
-    <div class="container-fluid">
-        {% include title.html %}
-    </div>
-</section>
+    <!-- Sub-navigation -->
+    {% if page.show-sub-navigation == true %}
+        {% include sub-navigation.html data=site.data.sub-navigation page-type=page.page-type api-page-title=page.api-page-title api-page-version=page.api-page-version %}
+    {% endif %}
 
-<!-- Main content -->
-<main class="flex-shrink-0 mt-3">
-    <div class="container layout-{{ page.layout }}">
-        {{ content }}
+    <!-- Title page -->
+    <section class="hero-section d-block d-lg-none">
+        <div class="container-fluid">
+            {% include title.html %}
+        </div>
+    </section>
 
-        {% if page.show_cube_bg == true %}
-        <div class="bg-cube"></div>
-        {% endif %}
-    </div>
-</main>
+    <!-- Main content -->
+    <main class="flex-shrink-0 mt-3">
+        <div class="container layout-{{ page.layout }}">
+            {{ content }}
 
-<!-- Footer -->
-{% include footer.html %}
+            {% if page.show_cube_bg == true %}
+            <div class="bg-cube"></div>
+            {% endif %}
+        </div>
+    </main>
 
-<script src="{{ 'assets/js/bootstrap.min.js' | relative_url }}"></script>
+    <!-- Footer -->
+    {% include footer.html %}
+
+    <!-- Scripts -->
+    <script src="{{ 'assets/js/bootstrap.min.js' | relative_url }}"></script>
+    <script src="{{ 'assets/js/sub-navigation.js' | relative_url }}"></script>
 </body>
 </html>

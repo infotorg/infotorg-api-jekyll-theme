@@ -40,6 +40,7 @@
               *  Items will contain only visible elements
             {% endcomment %}
             {% assign items = site.data.navigation | where:'show', true %}
+            {% assign sub_items = site.data.sub-navigation %}
 
             <ul class="navbar-nav ml-auto">
                 {% for item in items %}
@@ -58,6 +59,31 @@
                         >
                             {{ item.name }}
                         </a>
+                        <!-- Sub navigation for mobile view -->
+                        {% if item.sub-navigation == true %}
+                            {% assign page-title = page.api-page-title %}
+                            {% assign api-page-version = page.api-page-version %}
+                            {% assign versions = sub_items[item.type].versions | where:'show', true %}
+                            <ul>
+                                {% for version in versions %}
+                                <li>
+                                    <span>{{ version.title }}</span>
+                                    <ul>
+                                        {% for page in version.pages %}
+                                        <li>
+                                            <a
+                                                href="/{{ item.type }}/{{ version.link }}/{{ page[1].title }}"
+                                                class="{% if page-title == page[1].title and api-page-version == version.link %}active{% endif %}"
+                                            >
+                                                {{ page[1].title | capitalize }}
+                                            </a>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
                     </li>
                 {% endfor %}
             </ul>

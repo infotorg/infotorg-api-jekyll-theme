@@ -1,0 +1,26 @@
+.header-info-wrapper {
+    padding-bottom: 2rem;
+}
+
+.header-info {
+    h1 {
+        color: #22272a;
+        font-size: 1.75rem;
+    }
+
+    @include media-breakpoint-up(md) {
+        h1 {
+            font-size: 3rem;
+            font-weight: 300;
+        }
+    }
+
+    p {
+        font-size: 1rem;
+        background-color: #e44634;
+        color: #FFF;
+        padding: 0 4px;
+    }
+
+    display: inline-block;
+}
