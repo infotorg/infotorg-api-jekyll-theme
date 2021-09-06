@@ -1,4 +1,20 @@
-const setActiveNavTab = (type, version, apiCurrentPage) => {
+const getUrlParts = () => {
+    const [
+        apiCurrentPage,
+        apiVersion,
+        apiType,
+        ...baseUrl
+    ] = window.location.pathname.split('/').filter(el => el).reverse();
+
+    return {
+        apiCurrentPage,
+        apiVersion,
+        apiType,
+        baseUrl
+    };
+};
+
+const setActiveNavTab = (baseUrl, type, version, apiCurrentPage) => {
     const navigation = document.getElementById('navbarNav');
 
     if (!navigation) {
@@ -11,14 +27,19 @@ const setActiveNavTab = (type, version, apiCurrentPage) => {
 
     if (activeNavTab !== undefined) {
         activeNavTab.classList.add('active');
-        activeNavTab.href = `/${type}/${version}/${apiCurrentPage}`;
+        activeNavTab.href = `${baseUrl}/${type}/${version}/${apiCurrentPage}`;
     }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const [ apiType, apiVersion, apiCurrentPage ] = window.location.pathname.split('/').filter(el => el);
+    const {
+        apiCurrentPage,
+        apiVersion,
+        apiType,
+        baseUrl
+    } = getUrlParts();
 
-    setActiveNavTab(apiType, apiVersion, apiCurrentPage);
+    setActiveNavTab(baseUrl, apiType, apiVersion, apiCurrentPage);
 
     // Handle content on a version change event
     const apiVersions = document.getElementById('versions');
@@ -31,13 +52,18 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         const newVersion = e.target.value;
-        const [ apiType, apiVersion, apiCurrentPage ] = window.location.pathname.split('/').filter(el => el);
+        const {
+            apiCurrentPage,
+            apiVersion,
+            apiType,
+            baseUrl
+        } = getUrlParts();
 
         if (apiVersion === newVersion) {
             return;
         }
 
-        window.location.assign(`/${apiType}/${newVersion}/${apiCurrentPage}`);
-        setActiveNavTab(apiType, newVersion, apiCurrentPage);
+        window.location.assign(`${baseUrl}/${apiType}/${newVersion}/${apiCurrentPage}`);
+        setActiveNavTab(baseUrl, apiType, newVersion, apiCurrentPage);
     });
 });
