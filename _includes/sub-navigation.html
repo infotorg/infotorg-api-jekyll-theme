@@ -26,7 +26,7 @@
                     <ul class="sub-navigation__list {% if version.link == api-page-version %}active{% endif %}" id="pages">
                         {% for page in version.pages %}
                             <li class="sub-navigation__item">
-                                <a href="/{{ page-type }}/{{ version.link }}/{{ page[1].title }}" class="sub-navigation__link {% if page[1].title == api-page-title %}active{% endif %}">
+                                <a href="{{ site.baseurl }}/{{ page-type }}/{{ version.link }}/{{ page[1].title }}" class="sub-navigation__link {% if page[1].title == api-page-title %}active{% endif %}">
                                     {{ page[1].title | capitalize }}
                                 </a>
                             </li>
