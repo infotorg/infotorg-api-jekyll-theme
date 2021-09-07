@@ -27,7 +27,7 @@ const setActiveNavTab = (baseUrl, type, version, apiCurrentPage) => {
 
     if (activeNavTab !== undefined) {
         activeNavTab.classList.add('active');
-        activeNavTab.href = `${baseUrl}/${type}/${version}/${apiCurrentPage}`;
+        activeNavTab.href = `/${baseUrl}/${type}/${version}/${apiCurrentPage}`;
     }
 }
 
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        window.location.assign(`${baseUrl}/${apiType}/${newVersion}/${apiCurrentPage}`);
+        window.location.assign(`/${baseUrl}/${apiType}/${newVersion}/${apiCurrentPage}`);
         setActiveNavTab(baseUrl, apiType, newVersion, apiCurrentPage);
     });
 });
