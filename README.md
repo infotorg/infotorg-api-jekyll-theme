@@ -585,7 +585,7 @@ The theme gives you an ability to easily show links to external documentation re
   Optional keys:
   - `target` - adds a `target` html attribute to a navigation link. Possible values are: `_self`, `_blank`, `_parent`, `_top`. [[More details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)]
   - `show` - Boolean flag shows/hides the item. Possible values: `true`, `false`.
-2.On a page you need the resources link use [documentation](_layouts/documentation.html) layout
+2. On a page you need the resources link use [documentation](_layouts/documentation.html) layout
 ```yaml
 ---
 layout: documentation
