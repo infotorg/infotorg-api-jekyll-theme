@@ -565,7 +565,7 @@ The theme gives you an ability to easily show links to external documentation re
 #### How to use it
 1. Create a file with links to the documentation resources. By default, this is [_data/documentation_links.yml](_data/documentation_links.yml).
 
-`_data/documentation_links.yml`
+  `_data/documentation_links.yml`
   ```yaml
   - name: WSDL
     link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl
@@ -582,10 +582,10 @@ The theme gives you an ability to easily show links to external documentation re
     target: _blank
     show: true  
   ```
-Optional keys:
-- `target` - adds a `target` html attribute to a navigation link. Possible values are: `_self`, `_blank`, `_parent`, `_top`. [[More details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)]
-- `show` - Boolean flag shows/hides the item. Possible values: `true`, `false`.
-2. On a page you need the resources link use [documentation](_layouts/documentation.html) layout
+  Optional keys:
+  - `target` - adds a `target` html attribute to a navigation link. Possible values are: `_self`, `_blank`, `_parent`, `_top`. [[More details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)]
+  - `show` - Boolean flag shows/hides the item. Possible values: `true`, `false`.
+2.On a page you need the resources link use [documentation](_layouts/documentation.html) layout
 ```yaml
 ---
 layout: documentation
