@@ -384,10 +384,10 @@ Customize a site navigational links through a Jekyll data file [_data/navigation
 Optional keys:
 - `target` - adds a `target` html attribute to a navigation link. Possible values are: `_self`, `_blank`, `_parent`, `_top`. [[More details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)]
 - `show` - Boolean flag shows/hides the navigation item. Possible values: `true`, `false`.
-- `type` - `soap` or `rest` flags that are used for api's version
+- `type` - `soap` or `rest` flags that are used for api's versions
 
 ### API versions
-The theme gives you an ability to add versions for API and proper documentation resources for each version
+The theme gives you an ability to add versions for API and proper documentation resources for an each version
 
 ![Api version for SOAP screenshot](docs/screenshots/api-version-soap.png)
 
@@ -551,11 +551,9 @@ rest:
 
   ```
 
-2. In the `pages` folder add a folder for API type - `soap`, `rest` which should also contain a folder for each version. In the version folder it is possible to add any needed page with information about API version. For instance documentation, onboarding, security, swagger etc.
+2. In the `pages` folder add a folder for API type - `soap`, `rest` which should also contain a folder for each version. In the API version folder it is possible to add any needed page with information about API version. For instance documentation, onboarding, security, swagger etc.
 
 ![Api version folders structure screenshot](docs/screenshots/api-version-folders-structure.png)
-
-3. How to create pages for API version please find in documentation below.
 
 
 ### External documentation links
