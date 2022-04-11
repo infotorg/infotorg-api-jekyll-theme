@@ -359,19 +359,203 @@ Customize a site navigational links through a Jekyll data file [_data/navigation
   link: /security
   show: true
 
+- name: REST
+  link: /rest/v12.7/swagger
+  show: true
+  sub-navigation: true
+  type: rest
+
+- name: SOAP
+  link: /soap/v4.8/documentation
+  show: true
+  sub-navigation: true
+  type: soap
+
 - name: Onboarding
   link: /onboarding
   show: false # won't be presented in a navigation
 
 - name: FAQ
   link: https://faq.socialboards.com/infotorg/
-  target: _blank # will opened in a new tab
+  target: _blank # will be opened in a new tab
   show: true
 ```
 
 Optional keys:
 - `target` - adds a `target` html attribute to a navigation link. Possible values are: `_self`, `_blank`, `_parent`, `_top`. [[More details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)]
 - `show` - Boolean flag shows/hides the navigation item. Possible values: `true`, `false`.
+- `type` - `soap` or `rest` flags that are used for api's version
+
+### API versions
+The theme gives you an ability to add versions for API and proper documentation resources for each version
+
+![Api version for SOAP screenshot](docs/screenshots/api-version-soap.png)
+
+![Api version for REST screenshot](docs/screenshots/api-version-rest.png)
+
+#### How to use it
+1. Create a file with links to the api versions with resources. By default, this is [_data/sub-navigation.yml](_data/sub-navigation.yml).
+
+`_data/sub-navigation.yml`
+  ```yaml
+soap:
+  versions:
+    v4.8:
+      title: v4.8 (latest)
+      link: v4.8
+      show: true
+      pages:
+        documentation:
+          title: documentation
+          active: true
+          links:
+            - name: WSDL
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl#v4.8
+              direct_download: true
+              show: true
+
+            - name: XSD
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd#v4.8
+              direct_download: true
+              show: true
+
+            - name: Documentation
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd.xhtml#v4.8
+              target: _blank
+              show: true
+
+        security:
+          title: security
+          active: false
+
+        onboarding:
+          title: onboarding
+          active: false
+
+    v4.7:
+      title: v4.7
+      link: v4.7
+      show: true
+      pages:
+        documentation:
+          title: documentation
+          active: true
+          links:
+            - name: WSDL
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl#v4.7
+              direct_download: true
+              show: true
+
+            - name: XSD
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd#v4.7
+              direct_download: true
+              show: true
+
+            - name: Documentation
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd.xhtml#v4.7
+              target: _blank
+              show: true
+
+        security:
+          title: security
+          active: false
+
+        onboarding:
+          title: onboarding
+          active: false
+
+    v4.6:
+      title: v4.6
+      link: v4.6
+      show: false
+      pages:
+        documentation:
+          title: documentation
+          active: true
+          links:
+            - name: WSDL
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl#v4.6
+              direct_download: true
+              show: true
+
+            - name: XSD
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd#v4.6
+              direct_download: true
+              show: true
+
+            - name: Documentation
+              link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.xsd.xhtml#v4.6
+              target: _blank
+              show: true
+
+        security:
+          title: security
+          active: false
+
+        onboarding:
+          title: onboarding
+          active: false
+
+rest:
+  versions:
+    v12.7:
+      title: v12.7 (latest)
+      link: v12.7
+      show: true
+      pages:
+        swagger:
+          title: swagger
+          active: true
+
+        security:
+          title: security
+          active: false
+
+        onboarding:
+          title: onboarding
+          active: false
+
+    v12.6:
+      title: v12.6
+      link: v12.6
+      show: true
+      pages:
+        swagger:
+          title: swagger
+          active: true
+
+        security:
+          title: security
+          active: false
+
+        onboarding:
+          title: onboarding
+          active: false
+
+    v12.5:
+      title: v12.5
+      link: v12.5
+      show: false
+      pages:
+        swagger:
+          title: swagger
+          active: true
+
+        security:
+          title: security
+          active: false
+
+        onboarding:
+          title: onboarding
+          active: false
+
+  ```
+
+2. In the `pages` folder add a folder for API type - `soap`, `rest` which should also contain a folder for each version. In the version folder it is possible to add any needed page with information about API version. For instance documentation, onboarding, security, swagger etc.
+
+![Api version folders structure screenshot](docs/screenshots/api-version-folders-structure.png)
+
+3. How to create pages for API version please find in documentation below.
 
 
 ### External documentation links
@@ -383,7 +567,7 @@ The theme gives you an ability to easily show links to external documentation re
 #### How to use it
 1. Create a file with links to the documentation resources. By default, this is [_data/documentation_links.yml](_data/documentation_links.yml).
 
-  `_data/documentation_links.yml` 
+`_data/documentation_links.yml`
   ```yaml
   - name: WSDL
     link: http://ws-test.infotorg.no/xml/EVRY/InfotorgKjoeretoey/2018-11-28/InfotorgKjoeretoey.wsdl
@@ -400,9 +584,9 @@ The theme gives you an ability to easily show links to external documentation re
     target: _blank
     show: true  
   ```
-  Optional keys:
-  - `target` - adds a `target` html attribute to a navigation link. Possible values are: `_self`, `_blank`, `_parent`, `_top`. [[More details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)]
-  - `show` - Boolean flag shows/hides the item. Possible values: `true`, `false`.
+Optional keys:
+- `target` - adds a `target` html attribute to a navigation link. Possible values are: `_self`, `_blank`, `_parent`, `_top`. [[More details](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a)]
+- `show` - Boolean flag shows/hides the item. Possible values: `true`, `false`.
 2. On a page you need the resources link use [documentation](_layouts/documentation.html) layout
 ```yaml
 ---
@@ -425,7 +609,6 @@ permalink: documentation
 [documentation_links](_includes/documentation_links.html) requires only links [[see step 1 above](#how-to-use-it)].
 
 > NOTE: a page where you're including the `documentation_links` should have the `.html` extension, not `.md`.
-
 
 ### Layouts
 
@@ -481,7 +664,6 @@ openapi: /assets/openapi/YOUR_OPEN_API_FILE
 ```
 
 > **NOTE:** As a convention, all Open API files should be stored in the `/assets/openapi` folder.
-
 
 ### Includes
 
