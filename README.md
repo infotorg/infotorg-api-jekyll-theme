@@ -387,7 +387,7 @@ Optional keys:
 - `type` - `soap` or `rest` flags that are used for api's versions
 
 ### API versions
-The theme gives you an ability to add versions for API and proper documentation resources for an each version
+The theme gives you an ability to add versions for API and proper documentation resources for each version
 
 ![Api version for SOAP screenshot](docs/screenshots/api-version-soap.png)
 
