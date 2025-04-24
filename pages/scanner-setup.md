@@ -1,7 +1,8 @@
 ---
 layout: default
-title: Simple Page
-permalink: /scanner-setup/
+title: Scanner Setup
+permalink: scanner-setup
+show_navigation: false
 ---
 
 # Tietoevry Data Catalog - Scanner Setup Quick Guide
